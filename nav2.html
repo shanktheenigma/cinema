@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        position: fixed;
+        top: 100px;
+        right: 10px;
+        opacity: 0.5%;
+        background-color: #36013f;
+      }
+      * Navigation Bar */ .nav2 {
+        padding: 10px 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Menu List */
+      ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+      }
+
+      ul li {
+        position: relative;
+      }
+
+      ul li a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+      }
+
+      ul li a:hover {
+        background-color: #333;
+      }
+
+      /* Dropdown */
+      .dropdown {
+        display: none;
+        position: absolute;
+        background-color: #222;
+        top: 40px;
+        min-width: 160px;
+        z-index: 1;
+      }
+
+      .dropdown a {
+        padding: 10px 15px;
+      }
+
+      ul li:hover .dropdown {
+        display: block;
+      }
+    </style>
+  </head>
+  <body style="height: 200vh">
+    <div class="container" id="container">
+      <nav class="nav2">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">Movies ▾</a>
+            <div class="dropdown">
+              <a href="#">Now Showing</a>
+              <a href="#">Coming Soon</a>
+              <a href="#">Top Rated</a>
+              <a href="#">Genres</a>
+            </div>
+          </li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <script>
+      let toTop = document.querySelector("#container");
+      window.addEventListener("scroll", (event) => {
+        console.log(window.scrollY);
+
+        if (window.scrollY > 200) {
+          toTop.style.opacity = "100%";
+        } else if (window.scrollY > 100) {
+          toTop.style.opacity = "50%";
+        } else {
+          toTop.style.opacity = "0%";
+        }
+      });
+    </script>
+  </body>
+</html>

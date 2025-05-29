@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  position: fixed;
+  background-color: #36013f !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1535px;
+  height: 80px;
+  opacity: 80%;
+  border-bottom: #fff;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.title {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  padding: 50px;
+}
+
+.nav {
+  padding-right: 50px;
+}
+.nav a {
+  display: flex;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.nav a:hover {
+  background-color: white;
+  color: #36013f;
+}
+.dropdown-container {
+  position: relative;
+}
+
+.dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  position: absolute;
+  background-color: #570167;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  border-radius: 8px;
+  box-shadow: #570167;
+  z-index: 1;
+  padding: 10px 0;
+}
+
+.dropdown a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown a:hover {
+  background-color: #fff;
+  color: #36013f;
+}
+
+.dropdown-container:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.space{
+  background-color: #36013f;
+  width: 1535px;
+  height: 80px;
+}
+
+#search {
+  width: 300px;
+  height: 30px;
+  padding: 10px 0px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 25px;
+  outline: none;
+}
+
+#search:hover {
+  
+}

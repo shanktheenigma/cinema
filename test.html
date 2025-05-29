@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search by Name</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input { padding: 8px; width: 200px; }
+    button { padding: 8px 12px; }
+    #result { margin-top: 15px; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <h2>Search Person by Name</h2>
+
+  <input type="text" id="searchInput" placeholder="Enter name">
+  <button onclick="searchByName()">Search</button>
+  <div id="result"></div>
+
+  <script>
+    async function searchByName() {
+      const searchValue = document.getElementById("searchInput").value.toLowerCase();
+      const resultDiv = document.getElementById("result");
+
+      try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+
+        const match = data.find(person =>
+          person.name.toLowerCase().includes(searchValue)
+        );
+
+        if (match) {
+          resultDiv.textContent = `Found: ${match.name} (ID: ${match.id})`;
+        } else {
+          resultDiv.textContent = "No match found.";
+        }
+
+      } catch (error) {
+        resultDiv.textContent = "Error loading data.";
+        console.error(error);
+      }
+    }
+  </script>
+
+</body>
+</html>
