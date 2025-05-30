@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #36013f;
+}
+
 nav {
   position: fixed;
   background-color: #36013f !important;
@@ -12,13 +16,20 @@ nav {
   align-items: center;
   width: 1535px;
   height: 80px;
-  opacity: 80%;
+  background: rgba(54, 1, 63, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(
+    10px
+  ); /* Apply blur to background behind this element */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  padding: 2rem;
+  border-radius: 1rem;
+  color: E0B0FF;
   border-bottom: #fff;
 }
 
 nav a {
   text-decoration: none;
-  color: white;
+  color: E0B0FF;
 }
 
 .title {
@@ -26,6 +37,7 @@ nav a {
   font-weight: 800;
   font-size: 40px;
   padding: 50px;
+  color: #E0B0FF;
 }
 
 .nav {
@@ -35,11 +47,11 @@ nav a {
   display: flex;
   gap: 20px;
   padding-right: 20px;
+  color: #E0B0FF;
 }
 
 .nav a:hover {
-  background-color: white;
-  color: #36013f;
+  color: #E0B0FF;
 }
 .dropdown-container {
   position: relative;
@@ -64,13 +76,13 @@ nav a {
 .dropdown a {
   display: block;
   padding: 12px 20px;
-  color: white;
+  color: #E0B0FF;
   white-space: nowrap;
   transition: background 0.3s, color 0.3s;
 }
 
 .dropdown a:hover {
-  background-color: #fff;
+  background-color: #E0B0FF;
   color: #36013f;
 }
 
@@ -80,7 +92,7 @@ nav a {
   transform: translateY(0);
 }
 
-.space{
+.space {
   background-color: #36013f;
   width: 1535px;
   height: 80px;
@@ -97,5 +109,33 @@ nav a {
 }
 
 #search:hover {
-  
+}
+
+.filter-container {
+  padding: 10px 10px;
+  justify-content: center;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-button {
+  border-radius: 5px;
+  background-color: #570167;
+  color: #fff;
+  padding: 15px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+  color: #570167;
+  background-color: #E0B0FF;
+}
+
+.filter-button.active {
+  color: #36013f;
+  background-color: #E0B0FF;
 }

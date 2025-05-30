@@ -46,6 +46,31 @@
      </div>
 
      </div>
+
+     <!-- A to Z search section -->
+     <div class="filter-container border" id="filterList">
+      <button class="filter-button">All</button>
+      <button class="filter-button">#</button>
+      <button class="filter-button">0–9</button>
+      <script>
+        const container = document.getElementById("filterList");
+        for (let i = 65; i <= 90; i++) {
+          const btn = document.createElement("button");
+          btn.className = "filter-button";
+          btn.textContent = String.fromCharCode(i);
+          container.appendChild(btn);
+
+          container.addEventListener("click",(e)=> {
+            if (e.target.classList.contains("filter-button")){
+              [...container.children].forEach((btn) =>
+              btn.classList.remove("active"));
+              e.target.classList.add("active");
+            }
+            console.log();
+          })
+        }
+      </script>
+     </div>
     <!-- Boostrap cdn  -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
