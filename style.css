@@ -34,34 +34,19 @@ nav a {
   padding: 50px;
   color: #e0b0ff;
 }
-/* 
-nav .offcanvas a {
-
-} */
-/* 
-.nav {
-  padding-right: 50px;
-}
-.nav a {
-  display: flex;
-  gap: 20px;
-  padding-right: 20px;
-  color: #e0b0ff;
-}
-
-.nav a:hover {
-  color: #e0b0ff;
-} */
 
 /* Offcanvas section */
 /* Toggle Button */
 .offcanvas-toggle {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 20px;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 50px;
   z-index: 1001;
   background-color: #a758e4;
-  color: white;
+  color: #4a0059;
   border: none;
   padding: 10px 15px;
   border-radius: 6px;
@@ -73,7 +58,7 @@ nav .offcanvas a {
   position: fixed;
   top: 0;
   right: -300px;
-  width: 250px;
+  width: 300px;
   height: 100%;
   background-color: #4a0059;
   padding: 20px;
@@ -87,8 +72,11 @@ nav .offcanvas a {
 }
 
 .offcanvas h2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 0;
   color: #e0b0ff;
+  margin-bottom: 10px;
+  font-size: 30px;
 }
 
 .offcanvas ul {
@@ -100,10 +88,11 @@ nav .offcanvas a {
   margin-bottom: 15px;
 }
 
-.offcanvas a {
+.offcanvas li a {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 /* Movies section */
@@ -156,7 +145,7 @@ nav .offcanvas a {
 .search {
   position: fixed;
   border: #570167;
-  top: 40px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -183,6 +172,7 @@ nav .offcanvas a {
   background-color: #36013f;
   color: #e0b0ff;
   border: 2px solid #570167;
+  box-shadow:  2px 0 10px rgba(157, 115, 163, 0.4);
 }
 
 /* A to Z filter section */
