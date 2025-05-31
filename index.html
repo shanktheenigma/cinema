@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Boostrap cdn -->
-    <link
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
-    />
+    /> -->
 
     <!-- External Css -->
     <link rel="stylesheet" href="style.css" />
@@ -20,35 +20,41 @@
     <!-- First Navigation section  -->
     <nav>
       <a href="#" class="title">Movye</a>
-      <input type="search" id="search" value="Search by genres...">
-      <div class="nav">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <div class="dropdown-container">
-          <a href="#">Movies</a>
-          <div class="dropdown">
-            <a href="#">Now Showing</a>
-            <a href="#">Coming Soon</a>
-            <a href="#">Top Rated</a>
-            <a href="#">Genres</a>
-          </div>
-        </div>
-        <a href="#">Login</a>
-      </div>
     </nav>
 
-    <div class="body">
+    <!-- Toggle Button -->
+    <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
+      Menu
+    </button>
 
-      <div class="space"></div>
-    <!-- Search section -->
-     <div class="search border">
-      <input type="search" id="search" value="Search by genres...">
-     </div>
+    <!-- Offcanvas Panel -->
+    <div class="offcanvas" id="offcanvasMenu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#" style="color: #fff">Home</a></li>
+        <li><a href="#" style="color: #fff">Genres</a></li>
+        <li><a href="#" style="color: #fff">About</a></li>
+        <li class="dropdown-container">
+          <a href="#">Movies</a>
+          <ul class="dropdown">
+            <li><a href="#">Now Showing</a></li>
+            <li><a href="#">Coming Soon</a></li>
+            <li><a href="#">Top Rated</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="space"></div>
 
-     </div>
+    <!-- Search section  -->
+    <div class="search">
+      <input type="search" id="search" value="Genres..." />
+      <input type="search" id="search" value="Title..." />
+      <input type="search" id="search" value="Actor..." />
+    </div>
 
-     <!-- A to Z search section -->
-     <div class="filter-container border" id="filterList">
+    <!-- A to Z search section -->
+    <div class="filter-container" id="filterList">
       <button class="filter-button">All</button>
       <button class="filter-button">#</button>
       <button class="filter-button">0–9</button>
@@ -60,22 +66,39 @@
           btn.textContent = String.fromCharCode(i);
           container.appendChild(btn);
 
-          container.addEventListener("click",(e)=> {
-            if (e.target.classList.contains("filter-button")){
+          container.addEventListener("click", (e) => {
+            if (e.target.classList.contains("filter-button")) {
               [...container.children].forEach((btn) =>
-              btn.classList.remove("active"));
+                btn.classList.remove("active")
+              );
               e.target.classList.add("active");
             }
             console.log();
-          })
+          });
         }
       </script>
-     </div>
+    </div>
     <!-- Boostrap cdn  -->
-    <script
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
+
+    <!-- External Js -->
+    <script>
+      function toggleOffcanvas() {
+        const menu = document.getElementById("menu");
+        const offcanvas = document.getElementById("offcanvasMenu");
+
+        document.getElementById("offcanvasMenu").classList.toggle("active");
+
+        if (offcanvas.classList.contains("active")) {
+          menu.innerText = "Close";
+        } else {
+          menu.innerText = "Menu";
+        }
+      }
+    </script>
   </body>
 </html>

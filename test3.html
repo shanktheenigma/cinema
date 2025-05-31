@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Search Bar</title>
+  <style>
+    body {
+      background-color: #2b0033;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .search-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .search-input {
+      width: 300px;
+      height: 50px;
+      padding: 0 40px 0 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      color: #E0B0FF;
+      background-color: #570167;
+    }
+
+    .clear-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: #5cf;
+      cursor: pointer;
+      display: none;
+      user-select: none;
+    }
+
+    .search-input:not(:placeholder-shown) ~ .clear-btn {
+      display: block;
+    }
+
+    .clear-btn:hover {
+      color: #A758E4;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-wrapper">
+    <input
+      type="text"
+      id="search"
+      class="search-input"
+      placeholder="Search by genres..."
+    />
+    <span class="clear-btn" onclick="clearSearch()">×</span>
+  </div>
+
+  <script>
+    function clearSearch() {
+      const input = document.getElementById("search");
+      input.value = "";
+      input.focus();
+    }
+  </script>
+
+</body>
+</html>
