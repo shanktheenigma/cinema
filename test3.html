@@ -1,76 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Custom Search Bar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Analytics Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body {
-      background-color: #2b0033;
+      background-color: #0f0f0f;
+      color: #fff;
       font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      padding: 2rem;
     }
 
-    .search-wrapper {
-      position: relative;
+    .dashboard {
+      max-width: 900px;
+      margin: auto;
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .header {
+      margin-bottom: 1.5rem;
+    }
+
+    .online-dot {
       display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: limegreen;
+      border-radius: 50%;
+      margin: 0 4px;
     }
 
-    .search-input {
-      width: 300px;
-      height: 50px;
-      padding: 0 40px 0 15px;
-      font-size: 18px;
-      border: none;
-      border-radius: 8px;
-      outline: none;
-      color: #E0B0FF;
-      background-color: #570167;
+    .stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
     }
 
-    .clear-btn {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      color: #5cf;
-      cursor: pointer;
-      display: none;
-      user-select: none;
+    .stat h2 {
+      margin: 0;
+      font-size: 2rem;
     }
 
-    .search-input:not(:placeholder-shown) ~ .clear-btn {
-      display: block;
+    .change {
+      font-size: 0.875rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
     }
 
-    .clear-btn:hover {
-      color: #A758E4;
+    .positive {
+      background-color: #144d29;
+      color: #32cd32;
+    }
+
+    .chart-container {
+      background-color: #111827;
+      padding: 1rem;
+      border-radius: 12px;
     }
   </style>
 </head>
 <body>
+  <div class="dashboard">
+    <div class="header">
+      <h1>Web Analytics</h1>
+      <p>acme.com • <span class="online-dot"></span> 2 online</p>
+    </div>
 
-  <div class="search-wrapper">
-    <input
-      type="text"
-      id="search"
-      class="search-input"
-      placeholder="Search by genres..."
-    />
-    <span class="clear-btn" onclick="clearSearch()">×</span>
+    <div class="stats">
+      <div class="stat">
+        <p>Visitors</p>
+        <h2>25,738 <span class="change positive">+16%</span></h2>
+      </div>
+      <div class="stat">
+        <p>Page Views</p>
+        <h2>93,454 <span class="change positive">+17%</span></h2>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="visitorsChart"></canvas>
+    </div>
   </div>
 
   <script>
-    function clearSearch() {
-      const input = document.getElementById("search");
-      input.value = "";
-      input.focus();
-    }
-  </script>
+    const ctx = document.getElementById('visitorsChart').getContext('2d');
 
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [
+          '1/1', '1/5', '1/10', '1/15', '1/20', '1/25', '1/30',
+          '2/1', '2/3', '2/5'
+        ],
+        datasets: [{
+          label: 'Visitors',
+          data: [1000, 700, 300, 950, 400, 1000, 800, 1000, 976, 850],
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59, 130, 246, 0.1)',
+          fill: true,
+          tension: 0.3,
+          pointRadius: 3,
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        plugins: {
+          tooltip: {
+            backgroundColor: '#111',
+            titleColor: '#fff',
+            bodyColor: '#fff'
+          },
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: '#222' },
+            ticks: { color: '#aaa' }
+          },
+          y: {
+            grid: { color: '#222' },
+            ticks: { color: '#aaa' },
+            beginAtZero: true,
+            max: 1200
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
