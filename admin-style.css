@@ -19,7 +19,8 @@ body {
   padding: 20px;
   margin-left: 20px;
   color: #748cab;
-  border: 2px solid white;
+  width: 100%;
+  max-width: 100%;
 }
 
 nav {
@@ -27,13 +28,14 @@ nav {
   gap: 1px;
   position: fixed;
   top: 65px;
-  right: 10px;
+  right: 20px;
   z-index: 3;
 }
 
 nav a {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
+  font-size: 15px;
   text-decoration: none;
   color: #748cab;
   background-color: #0d1321;
@@ -46,7 +48,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #0d1321;
+  color: #0d1321;
   background-color: #748cab;
   border: 2px solid white;
   box-shadow: 2px 0 10px rgba(255, 255, 255, 0.4);
@@ -56,14 +58,15 @@ nav a:hover {
   margin-top: 97px;
   background-color: #0d1321;
   z-index: 1;
+  margin-left: 20px;
 }
 
 .chart1 {
   border: 2px solid white;
-  width: 70%;
-  height: 550px;
 }
 
 #myChart {
+  border: 2px solid white;
   padding: 20px;
+  margin: 0px 20px;
 }

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="adm-db.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="header">Movye</div>
+    <div class="subheader">
+      <div class="sliding-text">Tap the chart to see detail</div>
+    </div>
+    <div class="container">
+      <div class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Genres</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Movies</a></li>
+        </ul>
+      </div>
+      <div class="card">
+        <a href="#">
+          <div class="card1">
+            <div>
+              <canvas id="myChart1"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <script>
+              const card1data = document.getElementById("myChart1");
+
+              new Chart(card1data, {
+                type: "line",
+                data: {
+                  labels: [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                  ],
+                  datasets: [
+                    {
+                      label: "Daily",
+                      data: [12, 19, 3, 5, 2, 3],
+                      borderWidth: 1,
+                    },
+                  ],
+                },
+                options: {
+                  scales: {
+                    x: {
+                      grid: {
+                        color: "white",
+                      },
+                      ticks: {
+                        color: "white",
+                      },
+                    },
+                    y: {
+                      beginAtZero: true,
+                      grid: {
+                        color: "white",
+                      },
+                      ticks: {
+                        color: "white",
+                      },
+                    },
+                  },
+                },
+              });
+            </script>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card2">
+            <div>
+              <canvas id="myChart2"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <script>
+              const card2data = document.getElementById("myChart2");
+
+              new Chart(card2data, {
+                type: "line",
+                data: {
+                  labels: [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                  ],
+                  datasets: [
+                    {
+                      label: "# of Votes",
+                      data: [12, 19, 3, 5, 2, 3],
+                      borderWidth: 1,
+                    },
+                  ],
+                },
+                options: {
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                    },
+                  },
+                },
+              });
+            </script>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card3">
+            <div>
+              <canvas id="myChart3"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <script>
+              const card3data = document.getElementById("myChart3");
+
+              new Chart(card3data, {
+                type: "line",
+                data: {
+                  labels: [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                  ],
+                  datasets: [
+                    {
+                      label: "# of Votes",
+                      data: [12, 19, 3, 5, 2, 3],
+                      borderWidth: 1,
+                    },
+                  ],
+                },
+                options: {
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                    },
+                  },
+                },
+              });
+            </script>
+          </div>
+        </a>
+        <a href="#">
+          <div class="card4">
+            <div>
+              <canvas id="myChart4"></canvas>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            <script>
+              const card4data = document.getElementById("myChart4");
+
+              new Chart(card4data, {
+                type: "line",
+                data: {
+                  labels: [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                  ],
+                  datasets: [
+                    {
+                      label: "# of Votes",
+                      data: [12, 19, 3, 5, 2, 3],
+                      borderWidth: 1,
+                    },
+                  ],
+                },
+                options: {
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                    },
+                  },
+                },
+              });
+            </script>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
