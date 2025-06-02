@@ -11,195 +11,285 @@
     <div class="subheader">
       <div class="sliding-text">Tap the chart to see detail</div>
     </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Genres</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Movies</a></li>
+      </ul>
+    </div>
     <div class="container">
-      <div class="menu">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Genres</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Movies</a></li>
-        </ul>
-      </div>
       <div class="card">
         <a href="#">
-          <div class="card1">
-            <div>
-              <canvas id="myChart1"></canvas>
-            </div>
-
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-            <script>
-              const card1data = document.getElementById("myChart1");
-
-              new Chart(card1data, {
-                type: "line",
-                data: {
-                  labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                  ],
-                  datasets: [
-                    {
-                      label: "Daily",
-                      data: [12, 19, 3, 5, 2, 3],
-                      borderWidth: 1,
-                    },
-                  ],
-                },
-                options: {
-                  scales: {
-                    x: {
-                      grid: {
-                        color: "white",
-                      },
-                      ticks: {
-                        color: "white",
-                      },
-                    },
-                    y: {
-                      beginAtZero: true,
-                      grid: {
-                        color: "white",
-                      },
-                      ticks: {
-                        color: "white",
-                      },
-                    },
-                  },
-                },
-              });
-            </script>
+          <div class="chart-container">
+            <canvas id="lineChart1"></canvas>
           </div>
         </a>
         <a href="#">
-          <div class="card2">
-            <div>
-              <canvas id="myChart2"></canvas>
-            </div>
-
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-            <script>
-              const card2data = document.getElementById("myChart2");
-
-              new Chart(card2data, {
-                type: "line",
-                data: {
-                  labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                  ],
-                  datasets: [
-                    {
-                      label: "# of Votes",
-                      data: [12, 19, 3, 5, 2, 3],
-                      borderWidth: 1,
-                    },
-                  ],
-                },
-                options: {
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                    },
-                  },
-                },
-              });
-            </script>
+          <div class="chart-container">
+            <canvas id="lineChart2"></canvas>
           </div>
         </a>
         <a href="#">
-          <div class="card3">
-            <div>
-              <canvas id="myChart3"></canvas>
-            </div>
-
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-            <script>
-              const card3data = document.getElementById("myChart3");
-
-              new Chart(card3data, {
-                type: "line",
-                data: {
-                  labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                  ],
-                  datasets: [
-                    {
-                      label: "# of Votes",
-                      data: [12, 19, 3, 5, 2, 3],
-                      borderWidth: 1,
-                    },
-                  ],
-                },
-                options: {
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                    },
-                  },
-                },
-              });
-            </script>
+          <div class="chart-container">
+            <canvas id="lineChart3"></canvas>
           </div>
         </a>
         <a href="#">
-          <div class="card4">
-            <div>
-              <canvas id="myChart4"></canvas>
-            </div>
-
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-            <script>
-              const card4data = document.getElementById("myChart4");
-
-              new Chart(card4data, {
-                type: "line",
-                data: {
-                  labels: [
-                    "January",
-                    "February",
-                    "March",
-                    "April",
-                    "May",
-                    "June",
-                  ],
-                  datasets: [
-                    {
-                      label: "# of Votes",
-                      data: [12, 19, 3, 5, 2, 3],
-                      borderWidth: 1,
-                    },
-                  ],
-                },
-                options: {
-                  scales: {
-                    y: {
-                      beginAtZero: true,
-                    },
-                  },
-                },
-              });
-            </script>
+          <div class="chart-container">
+            <canvas id="lineChart4"></canvas>
           </div>
         </a>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("lineChart").getContext("2d");
+
+      const lineChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June"],
+          datasets: [
+            {
+              label: "Sales",
+              data: [120, 190, 300, 250, 220, 310],
+              borderColor: "rgba(252, 163, 17, 1)",
+              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderWidth: 2,
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff", // Color of "Sales" in legend
+              },
+            },
+            title: {
+              display: true,
+              text: "Monthly Sales Data",
+              color: "#fff",
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "#fff", // X-axis labels (e.g., "January", "February")
+              },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
+              },
+            },
+          },
+        },
+      });
+    </script>
+    <script>
+      const ctx1 = document.getElementById("lineChart1").getContext("2d");
+
+      const lineChart1 = new Chart(ctx1, {
+        type: "line",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June"],
+          datasets: [
+            {
+              label: "Sales",
+              data: [120, 190, 300, 250, 220, 310],
+              borderColor: "rgba(252, 163, 17, 1)",
+              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderWidth: 2,
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff", // Color of "Sales" in legend
+              },
+            },
+            title: {
+              display: true,
+              text: "Monthly Sales Data",
+              color: "#fff",
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "#fff", // X-axis labels (e.g., "January", "February")
+              },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
+              },
+            },
+          },
+        },
+      });
+    </script>
+    <script>
+      const ctx2 = document.getElementById("lineChart2").getContext("2d");
+
+      const lineChart2 = new Chart(ctx2, {
+        type: "line",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June"],
+          datasets: [
+            {
+              label: "Sales",
+              data: [120, 190, 300, 250, 220, 310],
+              borderColor: "rgba(252, 163, 17, 1)",
+              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderWidth: 2,
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff", // Color of "Sales" in legend
+              },
+            },
+            title: {
+              display: true,
+              text: "Monthly Sales Data",
+              color: "#fff",
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "#fff", // X-axis labels (e.g., "January", "February")
+              },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
+              },
+            },
+          },
+        },
+      });
+    </script>
+    <script>
+      const ctx3 = document.getElementById("lineChart3").getContext("2d");
+
+      const lineChart3 = new Chart(ctx3, {
+        type: "line",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June"],
+          datasets: [
+            {
+              label: "Sales",
+              data: [120, 190, 300, 250, 220, 310],
+              borderColor: "rgba(252, 163, 17, 1)",
+              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderWidth: 2,
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff", // Color of "Sales" in legend
+              },
+            },
+            title: {
+              display: true,
+              text: "Monthly Sales Data",
+              color: "#fff",
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "#fff", // X-axis labels (e.g., "January", "February")
+              },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
+              },
+            },
+          },
+        },
+      });
+    </script>
+    <script>
+      const ctx4 = document.getElementById("lineChart4").getContext("2d");
+
+      const lineChart4 = new Chart(ctx4, {
+        type: "line",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June"],
+          datasets: [
+            {
+              label: "Sales",
+              data: [120, 190, 300, 250, 220, 310],
+              borderColor: "rgba(252, 163, 17, 1)",
+              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderWidth: 2,
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#fff", // Color of "Sales" in legend
+              },
+            },
+            title: {
+              display: true,
+              text: "Monthly Sales Data",
+              color: "#fff",
+            },
+          },
+          scales: {
+            x: {
+              grid: {
+                // color: "#eeeeee", // Light gray grid lines on X axis
+              },
+            },
+            y: {
+              beginAtZero: true,
+              grid: {
+                // color: "#dddddd", // Light gray grid lines on Y axis
+                opacity: "50%",
+              },
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>
