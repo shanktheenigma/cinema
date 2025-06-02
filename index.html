@@ -12,7 +12,7 @@
   <body>
     <!-- First Navigation section  -->
     <nav>
-      <a href="#" class="title">Movye</a>
+      <a href="#" class="title">ShadowHeaven</a>
     </nav>
 
     <!-- Toggle Button -->
@@ -41,16 +41,25 @@
 
     <!-- Search section  -->
     <div class="search">
-      <input type="search" id="search" value="Genres..." />
-      <input type="search" id="search" value="Title..." />
-      <input type="search" id="search" value="Actor..." />
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Genres..." />
+        <button class="clear-btn">&times;</button>
+      </div>
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Genres..." />
+        <button class="clear-btn">&times;</button>
+      </div>
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Genres..." />
+        <button class="clear-btn">&times;</button>
+      </div>
     </div>
 
     <!-- A to Z search section -->
     <div class="filter-container" id="filterList">
       <button class="filter-button">All</button>
       <button class="filter-button">#</button>
-      <button class="filter-button">0–9</button>
+      <button class="filter-button" style="width: 60px">0–9</button>
       <script>
         const container = document.getElementById("filterList");
         for (let i = 65; i <= 90; i++) {
@@ -71,7 +80,7 @@
         }
       </script>
     </div>
- 
+
     <!-- External Js -->
     <script>
       function toggleOffcanvas() {
