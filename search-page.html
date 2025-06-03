@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- External Css -->
+    <link rel="stylesheet" href="search-page.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- First Navigation section  -->
+    <nav>
+      <a href="#" class="title">ShadowHeaven</a>
+    </nav>
+
+    <!-- Toggle Button -->
+    <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
+      Menu
+    </button>
+
+    <!-- Offcanvas Panel -->
+    <div class="offcanvas" id="offcanvasMenu">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Genres</a></li>
+        <li><a href="#">About</a></li>
+        <li class="dropdown-container">
+          <a href="#">Movies</a>
+          <ul class="dropdown">
+            <li><a href="#">Now Showing</a></li>
+            <li><a href="#">Coming Soon</a></li>
+            <li><a href="#">Top Rated</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Search section  -->
+    <div class="search">
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Genres..." />
+        <button class="clear-btn">&times;</button>
+      </div>
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Genres..." />
+        <button class="clear-btn">&times;</button>
+      </div>
+      <div class="search-wrapper">
+        <input type="text" class="search-input" placeholder="Genres..." />
+        <button class="clear-btn">&times;</button>
+      </div>
+    </div>
+
+    <!-- A to Z search section -->
+    <div class="filter-container" id="filterList">
+      <button class="filter-button">All</button>
+      <button class="filter-button">#</button>
+
+      <button class="filter-button" style="width: 60px">0–9</button>
+      <script>
+        const container = document.getElementById("filterList");
+        for (let i = 65; i <= 90; i++) {
+          const btn = document.createElement("button");
+          btn.className = "filter-button";
+          btn.textContent = String.fromCharCode(i);
+          container.appendChild(btn);
+
+          container.addEventListener("click", (e) => {
+            if (e.target.classList.contains("filter-button")) {
+              [...container.children].forEach((btn) =>
+                btn.classList.remove("active")
+              );
+              e.target.classList.add("active");
+            }
+            console.log();
+          });
+        }
+      </script>
+    </div>
+
+    <div class="card-container" id="cardContainer"></div>
+
+    <!-- External Js -->
+    <script>
+      function toggleOffcanvas() {
+        const menu = document.getElementById("menu");
+        const offcanvas = document.getElementById("offcanvasMenu");
+
+        document.getElementById("offcanvasMenu").classList.toggle("active");
+
+        if (offcanvas.classList.contains("active")) {
+          menu.innerText = "Close";
+        } else {
+          menu.innerText = "Menu";
+        }
+      }
+    </script>
+    <script>
+      let stopScroll = document.querySelector("#filterList");
+      let stay = document.querySelector("#cardContainer");
+      window.addEventListener("scroll", (event) => {
+        console.log(window.scrollY);
+
+        if (window.scrollY > 120) {
+          stopScroll.style.position = "fixed";
+          stopScroll.style.top = "-40px";
+          stopScroll.style.left = "0px";
+          stopScroll.style.width = "100%";
+          stopScroll.style.padding = "10px 10px";
+          stay.style.top = "100px";
+        } else {
+          stopScroll.style.position = "static";
+          stay.style.top = "";
+        }
+      });
+    </script>
+
+    <!-- External JavaScript -->
+     <script src="search-page.js"></script>
+  </body>
+</html>

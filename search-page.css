@@ -6,11 +6,12 @@
 
 body {
   background-color: #14213d;
+  height: 200rem;
+  border: 2px solid white;
 }
 
 /* Nav section */
 nav {
-  position: fixed;
   background-color: #14213d !important;
   display: flex;
   justify-content: space-between;
@@ -38,10 +39,10 @@ nav a {
 /* Offcanvas section */
 /* Toggle Button */
 .offcanvas-toggle {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   font-size: 18px;
-  position: fixed;
   top: 15px;
   right: 50px;
   z-index: 1001;
@@ -72,7 +73,7 @@ nav a {
 }
 
 .offcanvas h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 0;
   color: #fca311;
   margin-bottom: 10px;
@@ -89,7 +90,7 @@ nav a {
 }
 
 .offcanvas li a {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 15px;
@@ -135,11 +136,6 @@ nav a {
   transform: translateY(0);
 }
 
-.space {
-  background-color: #14213d;
-  width: 1535px;
-  height: 80px;
-}
 .search-box {
   position: relative;
   display: flex;
@@ -157,7 +153,7 @@ nav a {
   padding: 0;
 }
 .search {
-  position: fixed;
+  position: absolute;
   top: 50px;
   left: 50%;
   transform: translateX(-50%);
@@ -205,15 +201,16 @@ nav a {
   line-height: 1;
 }
 
-
 /* A to Z filter section */
 .filter-container {
-  margin-top: 100px;
+  /* border: 2px solid white; */
+  margin-top: 40px;
   padding: 10px 10px;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  background-color: #14213d;
 }
 
 .filter-button {
@@ -241,15 +238,33 @@ nav a {
   background-color: #14213d;
 }
 
-
-
-@media only screen and (max-width: 600px) 
-{
+@media only screen and (max-width: 600px) {
   .title {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  padding: 50px 20px;
-  color: #fca311;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 50px 20px;
+    color: #fca311;
+  }
 }
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 16px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
 }
