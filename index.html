@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-<link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon">
+    <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
     <title>ShadowHeaven</title>
   </head>
   <body>
@@ -64,28 +64,36 @@
     <footer></footer>
 
     <!-- A to Z search section -->
-    <div class="filter-container" id="filterList">
-      <button class="filter-button">All</button>
-      <button class="filter-button">#</button>
-      <button class="filter-button" style="width: 60px">0–9</button>
-      <script>
-        const container = document.getElementById("filterList");
-        for (let i = 65; i <= 90; i++) {
-          const btn = document.createElement("button");
-          btn.className = "filter-button";
-          btn.textContent = String.fromCharCode(i);
-          container.appendChild(btn);
+      <div class="filter-container" id="filterList">
+        <button class="filter-button">All</button>
+        <button class="filter-button">#</button>
+        <button class="filter-button">0–9</button>
+        <script>
+          const container = document.getElementById("filterList");
+          for (let i = 65; i <= 90; i++) {
+            const btn = document.createElement("button");
+            btn.className = "filter-button";
+            btn.textContent = String.fromCharCode(i);
+            container.appendChild(btn);
 
-          container.addEventListener("click", (e) => {
-            if (e.target.classList.contains("filter-button")) {
-              [...container.children].forEach((btn) =>
-                btn.classList.remove("active")
-              );
-              e.target.classList.add("active");
-            }
-            console.log();
-          });
-        }
+            container.addEventListener("click", (e) => {
+              if (e.target.classList.contains("filter-button")) {
+                [...container.children].forEach((btn) =>
+                  btn.classList.remove("active")
+                );
+                e.target.classList.add("active");
+              }
+              console.log();
+            });
+          }
+        </script>
+    </div>
+
+    <div class="New_released">
+      <h1>New Released</h1>
+      <script>
+        fetch ("movies.jsonlimit")
+        
       </script>
     </div>
 

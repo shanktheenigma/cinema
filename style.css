@@ -34,13 +34,12 @@ nav a {
   font-size: 35px;
   padding: 50px 20px;
   color: #fca311;
-  
 }
 
 /* Offcanvas section */
 /* Toggle Button */
 .offcanvas-toggle {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 500;
   font-size: 18px;
   position: fixed;
@@ -74,7 +73,7 @@ nav a {
 }
 
 .offcanvas h2 {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 0;
   color: #fca311;
   margin-bottom: 10px;
@@ -91,7 +90,7 @@ nav a {
 }
 
 .offcanvas li a {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 15px;
@@ -158,6 +157,7 @@ nav a {
   color: #14213d;
   padding: 0;
 }
+
 .search {
   position: fixed;
   top: 50px;
@@ -207,10 +207,11 @@ nav a {
   line-height: 1;
 }
 
-
 /* A to Z filter section */
+
+
 .filter-container {
-  margin-top: 100px;
+  margin-top: 30px;
   padding: 10px 10px;
   justify-content: center;
   display: flex;
@@ -227,8 +228,6 @@ nav a {
   cursor: pointer;
   border: none;
   transition: background-color 0.3s;
-  justify-content: center;
-  text-align: center;
 }
 
 .filter-button:hover {
@@ -243,15 +242,12 @@ nav a {
   background-color: #14213d;
 }
 
-
-
-@media only screen and (max-width: 600px) 
-{
+@media only screen and (max-width: 600px) {
   .title {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  padding: 50px 20px;
-  color: #fca311;
-}
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 15px;
+    padding: 50px 20px;
+    color: #fca311;
+  }
 }
