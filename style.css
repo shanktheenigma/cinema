@@ -20,6 +20,7 @@ nav {
   height: 80px;
   padding: 2rem;
   border-bottom: 3px solid #fca311;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.4);
 }
 
 nav a {
@@ -28,11 +29,12 @@ nav a {
 }
 
 .title {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Sansita", sans-serif;
   font-weight: 800;
   font-size: 35px;
   padding: 50px 20px;
   color: #fca311;
+  
 }
 
 /* Offcanvas section */
@@ -46,7 +48,7 @@ nav a {
   right: 50px;
   z-index: 1001;
   background-color: #fca311;
-  color: #4a0059;
+  color: #14213d;
   border: none;
   padding: 10px 15px;
   border-radius: 10px;

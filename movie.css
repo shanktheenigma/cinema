@@ -12,7 +12,7 @@ body {
 
 /* Nav section */
 nav {
-  background-color: #14213d !important;
+  background-color: #14213d;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -255,11 +255,12 @@ nav a {
 }
 
 .card {
-
+  background-color: #fca311;
+  color: #14213d;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 16px;
-  width: 200px;
+  padding: 5px;
+  width: 100px;
   text-align: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
