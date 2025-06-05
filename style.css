@@ -23,17 +23,13 @@ nav {
   box-shadow: 2px 0 20px rgba(0, 0, 0, 0.4);
 }
 
-nav a {
-  text-decoration: none;
-  color: #e0b0ff;
-}
-
 .title {
   font-family: "Sansita", sans-serif;
   font-weight: 800;
   font-size: 35px;
   padding: 50px 20px;
   color: #fca311;
+  text-decoration: none;
 }
 
 /* Offcanvas section */
@@ -45,7 +41,7 @@ nav a {
   position: fixed;
   top: 15px;
   right: 50px;
-  z-index: 1001;
+  z-index: 1;
   background-color: #fca311;
   color: #14213d;
   border: none;

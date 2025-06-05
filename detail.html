@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="detail.css" />
+    <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
+    <title>ShadowHeaven</title>
+  </head>
+  <body>
+    <nav>
+      <a href="about-us.html" class="title">ShadowHeaven</a>
+    </nav>
+    <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
+      &gt;
+    </button>
+
+    <!-- Offcanvas Panel -->
+    <div class="offcanvas" id="offcanvasMenu">
+     <div class="menu">
+      <div class="line"></div>
+      <h1>Admin Dashboard</h1>
+      <div class="line"></div>
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">New User</a></li>
+        <li><a href="#">New Subscription</a></li>
+        <li><a href="#">Watch Time</a></li>
+        <li><a href="#">Genres Popularity</a></li>
+        <li><a href="#">Reviews</a></li>
+      </ul>
+      <div class="line"></div>
+      <h1>System Setting</h1>
+      <div class="line"></div>
+      <ul>
+        <li><a href="#" id="convert-to-bar" onclick="ConvertToBar()">Convert to Bar Chart</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Setting</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </div>
+    </div>
+
+     
+    <div class="container">
+      <div class="card" id="card">
+        <a href="#">
+          <div class="chart-container">
+            <canvas id="lineChart1"></canvas>
+          </div>
+        </a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="detail.js"></script>
+    <script>
+      const ctx1 = document.getElementById("lineChart1").getContext("2d");
+
+      const lineChart1 = new Chart(ctx1, {
+        type: "line",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June"],
+          datasets: [
+            {
+              label: "Sales",
+              data: [120, 190, 300, 250, 220, 310],
+              borderColor: "#14213d",
+              backgroundColor: "rgba(252, 163, 17, 0.3)",
+              borderWidth: 2,
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: "#14213d", // Color of "Sales" in legend
+              },
+            },
+            title: {
+              display: true,
+              text: "New User",
+              color: "#14213d",
+            },
+          },
+          scales: {
+            x: {
+              ticks: {
+                color: "#14213d", // X-axis labels (e.g., "January", "February")
+              },
+            },
+            y: {
+              beginAtZero: true,
+              ticks: {
+                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Toggle Form with If Condition</title>
+  <style>
+    .options-group {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h3>Toggle Form with "If Condition"</h3>
+
+  <label for="condition">If condition:</label>
+  <select id="condition" onchange="toggleOptions()">
+    <option value="">-- Select condition --</option>
+    <option value="color">Color Options</option>
+    <option value="size">Size Options</option>
+    <option value="custom">Custom Input</option>
+  </select>
+
+  <!-- Color options -->
+  <div class="options-group" id="color-options">
+    <p>Select colors:</p>
+    <label><input type="checkbox" name="color" value="Red"> Red</label><br>
+    <label><input type="checkbox" name="color" value="Blue"> Blue</label><br>
+    <label><input type="checkbox" name="color" value="Green"> Green</label>
+  </div>
+
+  <!-- Size options -->
+  <div class="options-group" id="size-options">
+    <p>Select size:</p>
+    <label><input type="radio" name="size" value="Small"> Small</label><br>
+    <label><input type="radio" name="size" value="Medium"> Medium</label><br>
+    <label><input type="radio" name="size" value="Large"> Large</label>
+  </div>
+
+  <!-- Custom input -->
+  <div class="options-group" id="custom-input">
+    <p>Enter custom value:</p>
+    <input type="text" placeholder="Enter custom value">
+  </div>
+
+  <script>
+    function toggleOptions() {
+      const value = document.getElementById("condition").value;
+      document.querySelectorAll(".options-group").forEach(div => div.style.display = "none");
+
+      if (value === "color") {
+        document.getElementById("color-options").style.display = "block";
+      } else if (value === "size") {
+        document.getElementById("size-options").style.display = "block";
+      } else if (value === "custom") {
+        document.getElementById("custom-input").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

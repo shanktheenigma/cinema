@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #14213d;
+}
+
+/* Nav section */
+nav {
+  position: fixed;
+  top: 0px;
+  background-color: #14213d;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 80px;
+  padding: 2rem;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-family: "Sansita", sans-serif;
+  font-weight: 800;
+  font-size: 35px;
+  padding: 50px 20px;
+  color: #fca311;
+  text-decoration: none;
+}
+
+
+.menu {
+  background-color: #14213d;
+  width: 20%;
+  height: 100rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 85px;
+  padding-top: 20px;
+}
+
+.menu h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.menu a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  width: 250px;
+  display: block;
+  text-decoration: none;
+  color: #fca311;
+  padding: 10px;
+  transition: background 0.3s;
+  margin: 10px 25px;
+}
+
+.menu a:hover {
+  background-color: #fca31133;
+}
+
+.menu a:active {
+  background-color: #fca311;
+  color: #14213d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fca311;
+  font-size: 20px;
+  padding: 5px 40px;
+}
+
+.menu hr {
+  padding: 0px 10px;
+}
+
+.menu .line {
+  width: 90%;
+  height: 1px;
+  background-color: #fca311;
+}
+
+.container {
+  margin-top: 90px;
+  margin-left: 100px;
+}
+
+.card {
+  grid-gap: 10px;
+  padding: 0px;
+}
+
+.chart-container {
+  max-width: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.offcanvas-toggle {
+  font-size: 20px;
+  position: fixed;
+  top: 200px;
+  left: 5px;
+  height: 300px;
+  z-index: 2;
+  background-color: #14213d;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  color: #fca311;
+  /* border: 2px solid #fca311; */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Offcanvas Panel */
+.offcanvas {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 300px;
+  height: 100%;
+  padding: 50px;
+  transition: left 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.offcanvas.active {
+  left: 0;
+}
+
+.offcanvas h2 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 0;
+  color: #fca311;
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.offcanvas ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.offcanvas li {
+  margin-bottom: 15px;
+}
+
+.offcanvas li a {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+}

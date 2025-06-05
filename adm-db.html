@@ -4,24 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="adm-db.css" />
-    <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
+
     <title>ShadowHeaven</title>
   </head>
   <body>
-    <div class="header">Movye</div>
+    <div class="header">ShadowHeaven</div>
     <div class="subheader">
       <div class="sliding-text">Tap the chart to see detail</div>
     </div>
+
     <div class="menu">
+      <div class="line"></div>
+      <h1>Admin Dashboard</h1>
+      <div class="line"></div>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Genres</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Movies</a></li>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">New User</a></li>
+        <li><a href="#">New Subscription</a></li>
+        <li><a href="#">Watch Time</a></li>
+        <li><a href="#">Genres Popularity</a></li>
+        <li><a href="#">Reviews</a></li>
+      </ul>
+      <div class="line"></div>
+      <h1>System Setting</h1>
+      <div class="line"></div>
+      <ul>
+        <li><a href="#" id="convert-to-bar" onclick="ConvertToBar()">Convert to Bar Chart</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Setting</a></li>
+        <li><a href="#">Login</a></li>
       </ul>
     </div>
     <div class="container">
-      <div class="card">
+      <div class="card" id="card">
         <a href="#">
           <div class="chart-container">
             <canvas id="lineChart1"></canvas>
@@ -45,56 +67,6 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <script>
-      const ctx = document.getElementById("lineChart").getContext("2d");
-
-      const lineChart = new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: ["January", "February", "March", "April", "May", "June"],
-          datasets: [
-            {
-              label: "Sales",
-              data: [120, 190, 300, 250, 220, 310],
-              borderColor: "rgba(252, 163, 17, 1)",
-              backgroundColor: "rgba(247, 235, 215, 0.2)",
-              borderWidth: 2,
-              fill: true,
-              tension: 0.3,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              labels: {
-                color: "#fff", // Color of "Sales" in legend
-              },
-            },
-            title: {
-              display: true,
-              text: "Monthly Sales Data",
-              color: "#fff",
-            },
-          },
-          scales: {
-            x: {
-              ticks: {
-                color: "#fff", // X-axis labels (e.g., "January", "February")
-              },
-            },
-            y: {
-              beginAtZero: true,
-              ticks: {
-                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
-              },
-            },
-          },
-        },
-      });
-    </script>
     <script>
       const ctx1 = document.getElementById("lineChart1").getContext("2d");
 
@@ -106,8 +78,8 @@
             {
               label: "Sales",
               data: [120, 190, 300, 250, 220, 310],
-              borderColor: "rgba(252, 163, 17, 1)",
-              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderColor: "#14213d",
+              backgroundColor: "rgba(252, 163, 17, 0.3)",
               borderWidth: 2,
               fill: true,
               tension: 0.3,
@@ -119,25 +91,25 @@
           plugins: {
             legend: {
               labels: {
-                color: "#fff", // Color of "Sales" in legend
+                color: "#14213d", // Color of "Sales" in legend
               },
             },
             title: {
               display: true,
-              text: "Monthly Sales Data",
-              color: "#fff",
+              text: "New User",
+              color: "#14213d",
             },
           },
           scales: {
             x: {
               ticks: {
-                color: "#fff", // X-axis labels (e.g., "January", "February")
+                color: "#14213d", // X-axis labels (e.g., "January", "February")
               },
             },
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
+                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
               },
             },
           },
@@ -155,8 +127,8 @@
             {
               label: "Sales",
               data: [120, 190, 300, 250, 220, 310],
-              borderColor: "rgba(252, 163, 17, 1)",
-              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderColor: "#14213d",
+              backgroundColor: "rgba(252, 163, 17, 0.3)",
               borderWidth: 2,
               fill: true,
               tension: 0.3,
@@ -168,25 +140,25 @@
           plugins: {
             legend: {
               labels: {
-                color: "#fff", // Color of "Sales" in legend
+                color: "#14213d", // Color of "Sales" in legend
               },
             },
             title: {
               display: true,
-              text: "Monthly Sales Data",
-              color: "#fff",
+              text: "New Subscription",
+              color: "#14213d",
             },
           },
           scales: {
             x: {
               ticks: {
-                color: "#fff", // X-axis labels (e.g., "January", "February")
+                color: "#14213d", // X-axis labels (e.g., "January", "February")
               },
             },
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
+                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
               },
             },
           },
@@ -204,8 +176,8 @@
             {
               label: "Sales",
               data: [120, 190, 300, 250, 220, 310],
-              borderColor: "rgba(252, 163, 17, 1)",
-              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderColor: "#14213d",
+              backgroundColor: "rgba(252, 163, 17, 0.3)",
               borderWidth: 2,
               fill: true,
               tension: 0.3,
@@ -217,25 +189,25 @@
           plugins: {
             legend: {
               labels: {
-                color: "#fff", // Color of "Sales" in legend
+                color: "#14213d", // Color of "Sales" in legend
               },
             },
             title: {
               display: true,
-              text: "Monthly Sales Data",
-              color: "#fff",
+              text: "Genre Popularity",
+              color: "#14213d",
             },
           },
           scales: {
             x: {
               ticks: {
-                color: "#fff", // X-axis labels (e.g., "January", "February")
+                color: "#14213d", // X-axis labels (e.g., "January", "February")
               },
             },
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#fff", // Y-axis values (e.g., "0", "100", "200", etc.)
+                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
               },
             },
           },
@@ -253,8 +225,8 @@
             {
               label: "Sales",
               data: [120, 190, 300, 250, 220, 310],
-              borderColor: "rgba(252, 163, 17, 1)",
-              backgroundColor: "rgba(247, 235, 215, 0.2)",
+              borderColor: "#14213d",
+              backgroundColor: "rgba(252, 163, 17, 0.3)",
               borderWidth: 2,
               fill: true,
               tension: 0.3,
@@ -266,26 +238,25 @@
           plugins: {
             legend: {
               labels: {
-                color: "#fff", // Color of "Sales" in legend
+                color: "#14213d", // Color of "Sales" in legend
               },
             },
             title: {
               display: true,
-              text: "Monthly Sales Data",
-              color: "#fff",
+              text: "Watch Time",
+              color: "#14213d",
             },
           },
           scales: {
             x: {
-              grid: {
-                // color: "#eeeeee", // Light gray grid lines on X axis
+              ticks: {
+                color: "#14213d", // X-axis labels (e.g., "January", "February")
               },
             },
             y: {
               beginAtZero: true,
-              grid: {
-                // color: "#dddddd", // Light gray grid lines on Y axis
-                opacity: "50%",
+              ticks: {
+                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
               },
             },
           },

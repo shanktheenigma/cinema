@@ -12,7 +12,7 @@ body {
   background-color: #14213d;
   position: fixed;
   top: 0px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Sansita", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 800;
   font-size: 40px;
   padding: 10px 30px;
@@ -27,8 +27,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   position: fixed;
-  right: 10px;
-  top: 34px;
+  right: 5px;
+  top: 33px;
   margin-right: 20px;
   padding: 5px 10px;
   width: 300px;
@@ -88,7 +88,8 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 1;
-  top: 74px;
+  top: 68px;
+  padding-top: 20px;
 }
 
 .menu h2 {
@@ -127,24 +128,49 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.menu h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fca311;
+  font-size: 20px;
+  padding: 5px 40px;
+}
+
+.menu hr {
+  padding: 0px 10px;
+}
+
+.menu .line {
+  width: 90%;
+  height: 1px;
+  background-color: #fca311;
+}
+
 .container {
-  margin-top: 73.5px;
+  margin-top: 90px;
   margin-left: 305px;
+}
+
+.change-chart {
+  /* border: 2px solid #14213d;  */
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px 20px;
 }
 
 .card {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
   grid-gap: 10px;
-  width: 100%;
   padding: 20px;
+  /* background-color: #fca311; */
 }
 
 .chart-container {
-  max-width: 1000px;
+  max-width: 500px;
   margin: auto;
   padding: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 3px;
-  background-color: #14213d;
+  background-color: #fff;
+  padding: 20px;
 }

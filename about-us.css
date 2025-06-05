@@ -67,7 +67,8 @@ nav a:hover {
   justify-content: center;
 }
 
-.about-us-container {
+.about-us-container,
+.who-we-are-container {
   padding: 50px;
   margin: 30px 50px;
   border-radius: 25px;
@@ -75,12 +76,14 @@ nav a:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 10px rgb(0, 0, 0);
 }
 
-.about-us-container h1 {
+.about-us-container h1,
+.who-we-are-container h1 {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #fca311;
   margin: 10px 0px;
 }
-.about-us-container p {
+.about-us-container p,
+.who-we-are-container p {
   text-align: justify;
   font-family: "lato";
   color: white;
@@ -90,6 +93,15 @@ nav a:hover {
 
 .about-us-container img {
   float: right;
+  width: 250px;
+  border-radius: 12px;
+  border: 2px solid #fca311;
+  margin-left: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 10px rgb(0, 0, 0);
+}
+
+.who-we-are-container img {
+  float: left;
   width: 250px;
   border-radius: 12px;
   border: 2px solid #fca311;
