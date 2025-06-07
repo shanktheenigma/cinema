@@ -1,163 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Pricing Plans</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    body {
-      margin: 0;
-      padding: 40px;
-      background-color: #f0f0f0;
-    }
+    <!-- External Css -->
+    <link rel="stylesheet" href="offer.css" />
 
-    .pricing-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 280px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+    <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
+    <title>ShadowHeaven</title>
+  </head>
+  <body>
+    <!-- First Navigation section  -->
+    <nav id="nav">
+      <div class="nav-top">
+        <div class="title-container">
+          <a href="#" class="title"
+            >Shadow<span style="color: white">Heaven</span></a
+          >
+        </div>
+        <div class="navigation">
+          <a href="#">Home</a>
+          <a href="movie.html">Movies</a>
+          <a href="offer.html">Offer</a>
+          <a href="about-us.html">About us</a>
+          <!-- <a href="#">Contact</a> -->
+          <div class="search">
+            <input type="text" class="search-input" placeholder="Search..." />
+            <button class="clear-btn">&times;</button>
+            <button class="search-button">Search</button>
+          </div>
+          <!-- </div>
+         <div class="log-in-container"> -->
+          <a href="login-form.html" class="log-in">Log in</a>
+        </div>
+      </div>
+    </nav>
 
-    .badge {
-      background-color: #1DB954;
-      color: white;
-      font-weight: bold;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 12px;
-      width: fit-content;
-    }
+    <div class="pricing-container">
+      <!-- Basic Plan -->
+      <div class="card">
+        <div class="badge">1 month free</div>
+        <h2>Basic</h2>
+        <p class="price">$6.99/month after offer period</p>
+        <ul>
+          <li>Resolution - 720p</li>
+          <li>Play anywhere - even offline</li>
+          <li>Watch all you want</li>
+        </ul>
+        <button class="button">Get Started</button>
+        <p class="terms">
+          <a href="#">Terms and conditions apply</a>. 1 month free not available
+          for users who have already tried Premium.
+        </p>
+      </div>
 
-    h2 {
-      margin: 10px 0 5px;
-    }
+      <!-- Standard Plan -->
+      <div class="card">
+        <div class="badge">1 month free</div>
+        <h2>Standard</h2>
+        <p class="price">$9.99/month after offer period</p>
+        <ul>
+          <li>Resolution - 720p</li>
+          <li>Ad-free movie watching</li>
+          <li>Play anywhere - even offline, Watch all you want</li>
+        </ul>
+        <button class="button">Get Started</button>
+        <p class="terms">
+          <a href="#">Terms and conditions apply</a>. 1 month free not available
+          for users who have already tried Premium.
+        </p>
+      </div>
 
-    .price {
-      font-weight: normal;
-      color: #333;
-      margin-bottom: 10px;
-    }
+      <!-- Advanced Plan -->
+      <div class="card">
+        <div class="badge">1 month free</div>
+        <h2>Advanced</h2>
+        <p class="price">$15.49/month after offer period</p>
+        <ul>
+          <li>Resolution - 1080p</li>
+          <li>Download Allowed</li>
+          <li>Ad-free music listening, play offline, watch all you want</li>
+        </ul>
+        <button class="button">Get Started</button>
+        <p class="terms">
+          <a href="#">Terms and conditions apply</a>. 1 month free not available
+          for users who have already tried Premium.
+        </p>
+      </div>
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 20px;
-    }
+      <!-- Premium Plan -->
+      <div class="card">
+        <div class="badge">1 month free</div>
+        <h2>Premium</h2>
+        <p class="price">$19.99/month after offer period</p>
+        <ul>
+          <li>Resolution - 4K+HDR</li>
+          <li>Ad-free movie watching</li>
+          <li>Download Allowed</li>
+          <li>Play anywhere - even offline</li>
+          <li>2 Premium accounts for a couple under one roof</li>
+        </ul>
+        <button class="button">Get Started</button>
+        <p class="terms">
+          <a href="#">Terms and conditions apply</a>. 1 month free not available
+          for users who have already tried Premium.
+        </p>
+      </div>
+    </div>
+    <div class="space"></div>
 
-    ul li::before {
-      content: '✔';
-      color: black;
-      margin-right: 10px;
-    }
+    <footer id="footer">
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Latest</a>
+        <a href="#">Top Rated</a>
+        <a href="#">Coming Soon</a>
+        <a href="#">Help</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
 
-    .button {
-      background-color: black;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      width: 100%;
-      margin-top: auto;
-    }
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.youtube.com" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
 
-    .terms {
-      font-size: 12px;
-      color: #555;
-      margin-top: 10px;
-    }
+      <div class="footer-bottom">
+        &copy; 2025 ShadowHeaven. All rights reserved.
+      </div>
+    </footer>
 
-    .terms a {
-      color: #1DB954;
-      text-decoration: underline;
-    }
+    <script>
+      let stopScroll = document.querySelector("#footer");
+      window.addEventListener("scroll", (event) => {
+        console.log(window.scrollY);
 
-    @media (max-width: 768px) {
-      .pricing-container {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-  </style>
-</head>
-<body>
-
-<div class="pricing-container">
-  <!-- Basic Plan -->
-  <div class="card">
-    <div class="badge">1 month free</div>
-    <h2>Basic</h2>
-    <p class="price">$6.99/month after offer period</p>
-    <ul>        
-      <li>Resolution - 720p</li>
-      <li>Play anywhere - even offline</li>
-      <li>Watch all you want</li>
-    </ul>
-    <button class="button">Get Started</button>
-    <p class="terms"> <a href="#">Terms and conditions apply</a>. 1 month free not available for users who have already tried Premium.</p>
-  </div>
-
-  <!-- Standard Plan -->
-  <div class="card">
-    <div class="badge">1 month free</div>
-    <h2>Standard</h2>
-    <p class="price">$9.99/month after offer period</p>
-    <ul>
-      <li>Resolution - 720p</li>
-      <li>Ad-free movie watching</li>
-      <li>Play anywhere - even offline, Watch all you want</li>
-    </ul>
-    <button class="button">Get Started</button>
-    <p class="terms"><a href="#">Terms and conditions apply</a>. 1 month free not available for users who have already tried Premium.</p>
-  </div>
-
-  <!-- Advanced Plan -->
-  <div class="card">
-    <div class="badge">1 month free</div>
-    <h2>Advanced</h2>
-    <p class="price">$15.49/month after offer period</p>
-    <ul>
-      <li>Resolution - 1080p</li>
-      <li>Download Allowed</li>
-      <li>Ad-free music listening, play offline, watch all you want</li>
-    </ul>
-    <button class="button">Get Started</button>
-    <p class="terms"><a href="#">Terms and conditions apply</a>. 1 month free not available for users who have already tried Premium.</p>
-  </div>
-
-  <!-- Premium Plan -->
-  <div class="card">
-    <div class="badge">1 month free</div>
-    <h2>Premium</h2>
-    <p class="price">$19.99/month after offer period</p>
-    <ul>
-      <li>Resolution - 4K+HDR</li>
-      <li>Ad-free movie watching</li>
-      <li>Download Allowed</li>
-      <li>Play anywhere - even offline</li>
-      <li>2 Premium accounts for a couple under one roof</li>
-    </ul>
-    <button class="button">Get Started</button>
-   <p class="terms"><a href="#">Terms and conditions apply</a>. 1 month free not available for users who have already tried Premium.</p>
-  </div>
-    </p>
-  </div>
-</div>
-</body>
+        if (window.scrollY > 100) {
+          stopScroll.style.position = "fixed";
+          stopScroll.style.bottom = "0px";
+          stopScroll.style.left = "0px";
+          stopScroll.style.width = "100%";
+        } else {
+          stopScroll.style.position = "absolute";
+        }
+      });
+    </script>
+  </body>
 </html>

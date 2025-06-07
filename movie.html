@@ -7,53 +7,39 @@
     <!-- External Css -->
     <link rel="stylesheet" href="movie.css" />
     <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>ShadowHeaven</title>
   </head>
   <body>
-    <!-- First Navigation section  -->
-    <nav>
-      <a href="#" class="title">ShadowHeaven</a>
-    </nav>
-
-    <!-- Toggle Button -->
-    <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
-      Menu
-    </button>
-
-    <!-- Offcanvas Panel -->
-    <div class="offcanvas" id="offcanvasMenu">
-      <h2>Menu</h2>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Genres</a></li>
-        <li><a href="#">About</a></li>
-        <li class="dropdown-container">
+   <nav id="nav">
+      <div class="nav-top">
+        <div class="title-container">
+          <a href="about-us.html" class="title"
+            >Shadow<span style="color: white">Heaven</span></a
+          >
+        </div>
+        <div class="navigation">
+          <a href="index.html">Home</a>
           <a href="#">Movies</a>
-          <ul class="dropdown">
-            <li><a href="#">Now Showing</a></li>
-            <li><a href="#">Coming Soon</a></li>
-            <li><a href="#">Top Rated</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Search section  -->
-    <div class="search">
-      <div class="search-wrapper">
-        <input type="text" class="search-input" placeholder="Genres..." />
-        <button class="clear-btn">&times;</button>
+          <a href="offer.html">Offer</a>
+          <a href="about-us.html">About us</a>
+          <!-- <a href="#">Contact</a> -->
+          <div class="search">
+            <input type="text" class="search-input" placeholder="Search..." />
+            <button class="clear-btn">&times;</button>
+            <button class="search-button">Search</button>
+          </div>
+          <!-- </div>
+         <div class="log-in-container"> -->
+          <a href="login-form.html" class="log-in">Log in</a>
+        </div>
       </div>
-      <div class="search-wrapper">
-        <input type="text" class="search-input" placeholder="Genres..." />
-        <button class="clear-btn">&times;</button>
-      </div>
-      <div class="search-wrapper">
-        <input type="text" class="search-input" placeholder="Genres..." />
-        <button class="clear-btn">&times;</button>
-      </div>
-    </div>
-
+    </nav>
     <!-- A to Z search section -->
     <div class="filter-container" id="filterList">
       <button class="filter-button">All</button>
@@ -104,9 +90,9 @@
       window.addEventListener("scroll", (event) => {
         console.log(window.scrollY);
 
-        if (window.scrollY > 120) {
+        if (window.scrollY > 100) {
           stopScroll.style.position = "fixed";
-          stopScroll.style.top = "-40px";
+          stopScroll.style.top = "0px";
           stopScroll.style.left = "0px";
           stopScroll.style.width = "100%";
           stopScroll.style.padding = "10px 10px";
@@ -118,7 +104,53 @@
       });
     </script>
 
-    <!-- External JavaScript -->
+    <footer id="footer">
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Latest</a>
+        <a href="#">Top Rated</a>
+        <a href="#">Coming Soon</a>
+        <a href="#">Help</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.youtube.com" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2025 ShadowHeaven. All rights reserved.
+      </div>
+    </footer>
+
+    <!-- <script>
+      let stopScroll2 = document.querySelector("#footer");
+      window.addEventListener("scroll", (event) => {
+        console.log(window.scrollY);
+
+        if (window.scrollY > 100) {
+          stopScroll2.style.position = "fixed";
+          stopScroll2.style.bottom = "0px";
+          stopScroll2.style.left = "0px";
+          stopScroll2.style.width = "100%";
+        } else {
+          stopScroll2.style.position = "absolute";
+        }
+      });
+    </script> -->
     <script src="movie.js"></script>
   </body>
 </html>

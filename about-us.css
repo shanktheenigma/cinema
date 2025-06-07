@@ -41,7 +41,7 @@ nav a:hover {
 
 .container {
   margin-top: 100px;
-  padding: 0px 50px;
+  padding: 0px 0px;
 }
 
 .info-container {
@@ -168,6 +168,68 @@ nav a:hover {
   width: 150px;
 }
 }
+
+
+footer {
+  background-color: #14213d;
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 3px solid #fca311;
+  font-size: 0.8rem;
+  height: 50px;
+  width: 100%;
+}
+
+.footer-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+  font-family: "roboto";
+}
+
+.footer-links a:hover {
+  color: #f39c12;
+}
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons a {
+  margin: 0 6px;
+  font-size: 20px;
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #f39c12;
+}
+
+.footer-bottom {
+  margin-top: 10px;
+  font-size: 0.7rem;
+  color: #fff;
+}
+
 
 
 @media only screen and (max-width: 430px) {
