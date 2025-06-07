@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Horizontal Scroll Line Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+      }
+
+      .chart-wrapper {
+        overflow-x: auto; /* Enable horizontal scroll */
+        border: 1px solid #ccc;
+        padding: 10px;
+        max-width: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>User Record</h2>
+    <div class="chart-wrapper">
+      <canvas id="Chart"></canvas>
+    </div>
+
+    <script>
+      const ctx = document.getElementById("Chart").getContext("2d");
+
+      const labels = [];
+      const data = [];
+      const startYear = 2020;
+
+      for (let y = startYear; y < startYear + 5; y++) {
+        for (let m = 1; m <= 12; m++) {
+          labels.push(`${y}-${String(m).padStart(2, "0")}`);
+          data.push(Math.floor(Math.random() * 500 + 100)); // Random data
+        }
+      }
+
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: "New User",
+              data: data,
+              borderColor: "#14213d",
+              backgroundColor: "rgba(252, 163, 17, 0.3)",
+              fill: true,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "New User",
+            },
+          },
+          scales: {
+            x: {
+              beginAtZero: true,
+            },
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

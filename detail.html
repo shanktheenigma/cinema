@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="detail.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
     <title>ShadowHeaven</title>
   </head>
@@ -17,89 +23,109 @@
 
     <!-- Offcanvas Panel -->
     <div class="offcanvas" id="offcanvasMenu">
-     <div class="menu">
-      <div class="line"></div>
       <h1>Admin Dashboard</h1>
       <div class="line"></div>
       <ul>
-        <li><a href="#">Dashboard</a></li>
-        <li><a href="#">New User</a></li>
+        <li><a href="adm-db.html">Dashboard</a></li>
+        <li><a href="#">User Record</a></li>
         <li><a href="#">New Subscription</a></li>
         <li><a href="#">Watch Time</a></li>
         <li><a href="#">Genres Popularity</a></li>
         <li><a href="#">Reviews</a></li>
       </ul>
-      <div class="line"></div>
       <h1>System Setting</h1>
       <div class="line"></div>
       <ul>
-        <li><a href="#" id="convert-to-bar" onclick="ConvertToBar()">Convert to Bar Chart</a></li>
+        <li>
+          <a href="#" id="convert-to-bar" onclick="ConvertToBar()"
+            >Convert to Bar Chart</a
+          >
+        </li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">Setting</a></li>
         <li><a href="#">Login</a></li>
       </ul>
     </div>
-    </div>
 
-     
     <div class="container">
       <div class="card" id="card">
-        <a href="#">
-          <div class="chart-container">
-            <canvas id="lineChart1"></canvas>
-          </div>
-        </a>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="detail.js"></script>
-    <script>
-      const ctx1 = document.getElementById("lineChart1").getContext("2d");
+        <div class="chart-wrapper">
+          <canvas id="Chart"></canvas>
+        </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="detail.js"></script>
+      <script>
+        const ctx = document.getElementById("Chart").getContext("2d");
 
-      const lineChart1 = new Chart(ctx1, {
-        type: "line",
-        data: {
-          labels: ["January", "February", "March", "April", "May", "June"],
-          datasets: [
-            {
-              label: "Sales",
-              data: [120, 190, 300, 250, 220, 310],
-              borderColor: "#14213d",
-              backgroundColor: "rgba(252, 163, 17, 0.3)",
-              borderWidth: 2,
-              fill: true,
-              tension: 0.3,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            legend: {
-              labels: {
-                color: "#14213d", // Color of "Sales" in legend
+        const labels = [];
+        const data = [];
+        const startYear = 2020;
+
+        for (let y = startYear; y < startYear + 5; y++) {
+          for (let m = 1; m <= 12; m++) {
+            labels.push(`${y}-${String(m).padStart(2, "0")}`);
+            data.push(Math.floor(Math.random() * 500 + 100)); 
+          }
+        }
+
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "New User",
+                data: data,
+                borderColor: "#14213d",
+                backgroundColor: "rgba(252, 163, 17, 0.5)",
+                fill: true,
+                tension: 0.4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            plugins: {
+              title: {
+                display: true,
+                text: "User Record",
               },
             },
-            title: {
-              display: true,
-              text: "New User",
-              color: "#14213d",
+            scales: {
+              x: {
+                beginAtZero: true,
+              },
+              y: {
+                beginAtZero: true,
+              },
             },
           },
-          scales: {
-            x: {
-              ticks: {
-                color: "#14213d", // X-axis labels (e.g., "January", "February")
-              },
-            },
-            y: {
-              beginAtZero: true,
-              ticks: {
-                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
-              },
-            },
-          },
-        },
-      });
-    </script>
+        });
+      </script>
+
+      <div class="data-set">
+        <div class="details">
+          <h1>100</h1>
+          <p>New User</p>
+        </div>
+        <div class="details">
+          <h1>100</h1>
+          <p>New User</p>
+        </div>
+        <div class="details">
+          <h1>100</h1>
+          <p>New User</p>
+        </div>
+        <div class="details">
+          <h1>100</h1>
+          <p>New User</p>
+        </div>
+        <div class="details-data">
+          <h1>100</h1>
+          <p>New User</p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,10 +1,12 @@
-function ConvetToBar() {
-        const btn = document.getElementById("convert-to-bar");
-        const line = document.getElementById("card");
+function toggleOffcanvas() {
+  const menuButton = document.getElementById("menu"); // The ">" button
+  const offcanvasMenu = document.getElementById("offcanvasMenu");
 
-        if (line.char("")) {
-          menu.innerText = "Convert-";
-        } else {
-          menu.innerText = "Menu";
-        }
-      }
+  offcanvasMenu.classList.toggle("active");
+
+  if (offcanvasMenu.classList.contains("active")) {
+    menuButton.innerText = "<";
+  } else {
+    menuButton.innerText = ">";
+  }
+}

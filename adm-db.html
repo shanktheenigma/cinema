@@ -10,6 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
 
     <title>ShadowHeaven</title>
@@ -20,52 +25,71 @@
       <div class="sliding-text">Tap the chart to see detail</div>
     </div>
 
-    <div class="menu">
-      <div class="line"></div>
+    <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
+      &gt;
+    </button>
+
+    <div class="menu" id="offcanvasMenu">
       <h1>Admin Dashboard</h1>
       <div class="line"></div>
       <ul>
         <li><a href="#">Dashboard</a></li>
-        <li><a href="#">New User</a></li>
-        <li><a href="#">New Subscription</a></li>
+        <li><a href="detail.html">New User</a></li>
+        <li><a href="#">Seach record</a></li>
         <li><a href="#">Watch Time</a></li>
         <li><a href="#">Genres Popularity</a></li>
         <li><a href="#">Reviews</a></li>
       </ul>
-      <div class="line"></div>
       <h1>System Setting</h1>
       <div class="line"></div>
       <ul>
-        <li><a href="#" id="convert-to-bar" onclick="ConvertToBar()">Convert to Bar Chart</a></li>
+        <li></li>
         <li><a href="#">Contact</a></li>
         <li><a href="#">Setting</a></li>
         <li><a href="#">Login</a></li>
       </ul>
     </div>
-    <div class="container">
+    <div class="card-container">
       <div class="card" id="card">
-        <a href="#">
+        <a href="detail.html">
           <div class="chart-container">
+            <h1>User</h1>
+            <div class="KPI">
+              <strong>26K</strong> <span style="color: green">(12.4% ↑)</span>
+            </div>
             <canvas id="lineChart1"></canvas>
           </div>
         </a>
-        <a href="#">
+        <a href="detail.html">
           <div class="chart-container">
+            <h1>Watching Time</h1>
+            <div class="KPI">
+              <strong>26K</strong> <span style="color: green">(12.4% ↑)</span>
+            </div>
             <canvas id="lineChart2"></canvas>
           </div>
         </a>
-        <a href="#">
+        <a href="detail.html">
           <div class="chart-container">
+            <h1>Genre Popularity</h1>
+            <div class="KPI">
+              <strong>26K</strong> <span style="color: green">(12.4% ↑)</span>
+            </div>
             <canvas id="lineChart3"></canvas>
           </div>
         </a>
-        <a href="#">
+        <a href="detail.html">
           <div class="chart-container">
+            <h1>Search Record</h1>
+            <div class="KPI">
+              <strong>26K</strong> <span style="color: green">(12.4% ↑)</span>
+            </div>
             <canvas id="lineChart4"></canvas>
           </div>
         </a>
       </div>
     </div>
+    <script src="adm-bd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
       const ctx1 = document.getElementById("lineChart1").getContext("2d");
@@ -76,7 +100,7 @@
           labels: ["January", "February", "March", "April", "May", "June"],
           datasets: [
             {
-              label: "Sales",
+              label: "New User",
               data: [120, 190, 300, 250, 220, 310],
               borderColor: "#14213d",
               backgroundColor: "rgba(252, 163, 17, 0.3)",
@@ -88,28 +112,16 @@
         },
         options: {
           responsive: true,
-          plugins: {
-            legend: {
-              labels: {
-                color: "#14213d", // Color of "Sales" in legend
-              },
-            },
-            title: {
-              display: true,
-              text: "New User",
-              color: "#14213d",
-            },
-          },
           scales: {
             x: {
               ticks: {
-                color: "#14213d", // X-axis labels (e.g., "January", "February")
+                color: "#14213d",
               },
             },
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
+                color: "#14213d",
               },
             },
           },
@@ -125,7 +137,7 @@
           labels: ["January", "February", "March", "April", "May", "June"],
           datasets: [
             {
-              label: "Sales",
+              label: "Most Watching Time",
               data: [120, 190, 300, 250, 220, 310],
               borderColor: "#14213d",
               backgroundColor: "rgba(252, 163, 17, 0.3)",
@@ -137,28 +149,16 @@
         },
         options: {
           responsive: true,
-          plugins: {
-            legend: {
-              labels: {
-                color: "#14213d", // Color of "Sales" in legend
-              },
-            },
-            title: {
-              display: true,
-              text: "New Subscription",
-              color: "#14213d",
-            },
-          },
           scales: {
             x: {
               ticks: {
-                color: "#14213d", // X-axis labels (e.g., "January", "February")
+                color: "#14213d",
               },
             },
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
+                color: "#14213d",
               },
             },
           },
@@ -174,7 +174,7 @@
           labels: ["January", "February", "March", "April", "May", "June"],
           datasets: [
             {
-              label: "Sales",
+              label: "Most popular genre",
               data: [120, 190, 300, 250, 220, 310],
               borderColor: "#14213d",
               backgroundColor: "rgba(252, 163, 17, 0.3)",
@@ -186,28 +186,17 @@
         },
         options: {
           responsive: true,
-          plugins: {
-            legend: {
-              labels: {
-                color: "#14213d", // Color of "Sales" in legend
-              },
-            },
-            title: {
-              display: true,
-              text: "Genre Popularity",
-              color: "#14213d",
-            },
-          },
+         
           scales: {
             x: {
               ticks: {
-                color: "#14213d", // X-axis labels (e.g., "January", "February")
+                color: "#14213d",
               },
             },
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
+                color: "#14213d",
               },
             },
           },
@@ -223,7 +212,7 @@
           labels: ["January", "February", "March", "April", "May", "June"],
           datasets: [
             {
-              label: "Sales",
+              label: "Most Search",
               data: [120, 190, 300, 250, 220, 310],
               borderColor: "#14213d",
               backgroundColor: "rgba(252, 163, 17, 0.3)",
@@ -235,28 +224,17 @@
         },
         options: {
           responsive: true,
-          plugins: {
-            legend: {
-              labels: {
-                color: "#14213d", // Color of "Sales" in legend
-              },
-            },
-            title: {
-              display: true,
-              text: "Watch Time",
-              color: "#14213d",
-            },
-          },
+          
           scales: {
             x: {
               ticks: {
-                color: "#14213d", // X-axis labels (e.g., "January", "February")
+                color: "#14213d",
               },
             },
             y: {
               beginAtZero: true,
               ticks: {
-                color: "#14213d", // Y-axis values (e.g., "0", "100", "200", etc.)
+                color: "#14213d",
               },
             },
           },
