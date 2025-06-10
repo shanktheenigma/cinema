@@ -10,7 +10,7 @@ body {
 }
 
 /* Nav section */
-nav {
+#nav {
   position: fixed;
   width: 100%;
   background-color: #14213d;
