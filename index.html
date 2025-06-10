@@ -6,11 +6,22 @@
 
     <!-- External Css -->
     <link rel="stylesheet" href="style.css" />
-
-    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
+    <title>ShadowHeaven</title>
   </head>
   <body>
     <!-- Nav section -->
+
     <nav id="nav">
       <div class="nav-top">
         <div class="title-container">
@@ -18,21 +29,50 @@
             >Shadow<span style="color: white">Heaven</span></a
           >
         </div>
-        <div class="navigation">
-          <a href="#">Home</a>
-          <a href="movie.html">Movies</a>
-          <a href="offer.html">Offer</a>
-          <a href="about-us.html">About us</a>
-          <div class="search">
-            <input type="text" class="search-input" placeholder="Search..." />
-            <button class="clear-btn">&times;</button>
-            <button class="search-button">Search</button>
+
+        <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
+          &gt;
+        </button>
+        
+        <div class="offcanvas" id="offcanvasMenu">
+          <div class="menu">
+            <ul>
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li><a href="movie.html">Movies</a></li>
+              <li><a href="offer.html">Offer</a></li>
+              <li><a href="about-us.html">About us</a></li>
+              <li>
+                <div class="search">
+                  <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Search..."
+                  />
+                  <button class="clear-btn">&times;</button>
+                  <button class="search-button">Search</button>
+                </div>
+              </li>
+              <li><a href="login-form.html" class="log-in">Log in</a></li>
+            </ul>
           </div>
-          <!-- </div>
-         <div class="log-in-container"> -->
-          <a href="login-form.html" class="log-in">Log in</a>
         </div>
       </div>
+      <!-- <h2>Menu</h2>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Genres</a></li>
+          <li><a href="#">About</a></li>
+          <li class="dropdown-container">
+            <a href="#">Movies</a>
+            <ul class="dropdown">
+              <li><a href="#">Now Showing</a></li>
+              <li><a href="#">Coming Soon</a></li>
+              <li><a href="#">Top Rated</a></li>
+            </ul>
+          </li>
+        </ul> -->
     </nav>
 
     <!-- MM SECTION -->
@@ -195,60 +235,9 @@
           currentIndex2,
           moviesPerLoad
         );
-
-        // If you add "View More" buttons, you'd add listeners here:
-        // const viewMoreBtn1 = document.getElementById("viewMoreBtn1");
-        // if (viewMoreBtn1) {
-        //   viewMoreBtn1.addEventListener("click", () => {
-        //     currentIndex1 = displayMovies("movieGrid", moviesGrid1, currentIndex1, moviesPerLoad);
-        //     if (currentIndex1 >= moviesGrid1.length) { viewMoreBtn1.style.display = "none"; }
-        //   });
-        // }
-        // ... similarly for viewMoreBtn2
       });
     </script>
 
-    <!-- A to Z search section -->
-    <div class="filter-container" id="filterList">
-      <button class="filter-button">All</button>
-      <button class="filter-button">#</button>
-      <button class="filter-button">0–9</button>
-      <script>
-        const container = document.getElementById("filterList");
-        for (let i = 65; i <= 90; i++) {
-          const btn = document.createElement("button");
-          btn.className = "filter-button";
-          btn.textContent = String.fromCharCode(i);
-          container.appendChild(btn);
-
-          container.addEventListener("click", (e) => {
-            if (e.target.classList.contains("filter-button")) {
-              [...container.children].forEach((btn) =>
-                btn.classList.remove("active")
-              );
-              e.target.classList.add("active");
-            }
-            console.log();
-          });
-        }
-      </script>
-    </div>
-
-    <!-- External Js -->
-    <script>
-      function toggleOffcanvas() {
-        const menu = document.getElementById("menu");
-        const offcanvas = document.getElementById("offcanvasMenu");
-
-        document.getElementById("offcanvasMenu").classList.toggle("active");
-
-        if (offcanvas.classList.contains("active")) {
-          menu.innerText = "Close";
-        } else {
-          menu.innerText = "Menu";
-        }
-      }
-    </script>
     <footer id="footer">
       <div class="footer-links">
         <a href="#">Home</a>
@@ -280,5 +269,7 @@
         &copy; 2025 ShadowHeaven. All rights reserved.
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

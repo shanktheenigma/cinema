@@ -1,76 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Horizontal Scroll Line Chart</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-      body {
-        font-family: sans-serif;
-        padding: 2rem;
-      }
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Pagination</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
 
-      .chart-wrapper {
-        overflow-x: auto; /* Enable horizontal scroll */
-        border: 1px solid #ccc;
-        padding: 10px;
-        max-width: 1000px;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>User Record</h2>
-    <div class="chart-wrapper">
-      <canvas id="Chart"></canvas>
-    </div>
+    .card {
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin: 5px 0;
+    }
 
-    <script>
-      const ctx = document.getElementById("Chart").getContext("2d");
+    #pagination {
+      margin-top: 20px;
+      text-align: center;
+    }
 
-      const labels = [];
-      const data = [];
-      const startYear = 2020;
+    .page-button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
 
-      for (let y = startYear; y < startYear + 5; y++) {
-        for (let m = 1; m <= 12; m++) {
-          labels.push(`${y}-${String(m).padStart(2, "0")}`);
-          data.push(Math.floor(Math.random() * 500 + 100)); // Random data
-        }
-      }
+    .page-button.active {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
 
-      new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: labels,
-          datasets: [
-            {
-              label: "New User",
-              data: data,
-              borderColor: "#14213d",
-              backgroundColor: "rgba(252, 163, 17, 0.3)",
-              fill: true,
-              tension: 0.4,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          plugins: {
-            title: {
-              display: true,
-              text: "New User",
-            },
-          },
-          scales: {
-            x: {
-              beginAtZero: true,
-            },
-            y: {
-              beginAtZero: true,
-            },
-          },
-        },
+  <h2>Movies</h2>
+  <div id="cardContainer"></div>
+  <div id="pagination"></div>
+
+  <script>
+    // Sample movie data
+    const movies = [
+      { Title: "Avengers" }, { Title: "Batman" }, { Title: "Cars" },
+      { Title: "Deadpool" }, { Title: "Eternals" }, { Title: "Frozen" },
+      { Title: "Godzilla" }, { Title: "Harry Potter" }, { Title: "Inception" },
+      { Title: "Joker" }, { Title: "Kung Fu Panda" }, { Title: "Luca" },
+      { Title: "Matrix" }, { Title: "Narnia" }, { Title: "Oppenheimer" }
+    ];
+
+    const moviesPerPage = 5;
+    let currentPage = 1;
+
+    function displayMovies(page) {
+      const container = document.getElementById("cardContainer");
+      container.innerHTML = "";
+
+      const start = (page - 1) * moviesPerPage;
+      const end = start + moviesPerPage;
+      const pageMovies = movies.slice(start, end);
+
+      pageMovies.forEach(movie => {
+        const card = document.createElement("div");
+        card.className = "card";
+        card.textContent = movie.Title;
+        container.appendChild(card);
       });
-    </script>
-  </body>
+    }
+
+    function setupPagination() {
+      const pagination = document.getElementById("pagination");
+      pagination.innerHTML = "";
+      const pageCount = Math.ceil(movies.length / moviesPerPage);
+
+      for (let i = 1; i <= pageCount; i++) {
+        const btn = document.createElement("button");
+        btn.textContent = i;
+        btn.className = "page-button";
+        if (i === currentPage) btn.classList.add("active");
+
+        btn.addEventListener("click", () => {
+          currentPage = i;
+          displayMovies(currentPage);
+          setupPagination();
+        });
+
+        pagination.appendChild(btn);
+      }
+    }
+
+    // Initialize
+    displayMovies(currentPage);
+    setupPagination();
+  </script>
+
+</body>
 </html>

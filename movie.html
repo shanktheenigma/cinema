@@ -16,7 +16,7 @@
     <title>ShadowHeaven</title>
   </head>
   <body>
-   <nav id="nav">
+    <nav id="nav">
       <div class="nav-top">
         <div class="title-container">
           <a href="about-us.html" class="title"
@@ -42,32 +42,11 @@
     </nav>
     <!-- A to Z search section -->
     <div class="filter-container" id="filterList">
-      <button class="filter-button">All</button>
-      <button class="filter-button">#</button>
-
-      <button class="filter-button" style="width: 60px">0–9</button>
-      <script>
-        const container = document.getElementById("filterList");
-        for (let i = 65; i <= 90; i++) {
-          const btn = document.createElement("button");
-          btn.className = "filter-button";
-          btn.textContent = String.fromCharCode(i);
-          container.appendChild(btn);
-
-          container.addEventListener("click", (e) => {
-            if (e.target.classList.contains("filter-button")) {
-              [...container.children].forEach((btn) =>
-                btn.classList.remove("active")
-              );
-              e.target.classList.add("active");
-            }
-            console.log();
-          });
-        }
-      </script>
     </div>
 
-    <div class="card-container" id="cardContainer"></div>
+    <div class="card-container" id="cardContainer">
+      <!-- <div class="tooltip-box">$149 - Available</div> -->
+    </div>
 
     <!-- External Js -->
     <script>

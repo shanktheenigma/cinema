@@ -7,7 +7,7 @@
 body {
   background-color: #e5e5e5;
   overflow: auto;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
