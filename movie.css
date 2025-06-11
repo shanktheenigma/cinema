@@ -245,6 +245,7 @@ footer {
 }
 
 .card {
+  margin-top: 10px;
   background-color: #222;
   border-radius: 8px;
   overflow: hidden;

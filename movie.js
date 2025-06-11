@@ -7,7 +7,7 @@ fetch("movies.json")
     displayMovies(data); // Show all movies
   })
   .catch((error) => {
-    console.error("Error fetching data:", error); //output error
+    console.error("Error fetching data:", error);
   });
 
 const container = document.getElementById("filterList");

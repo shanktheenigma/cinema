@@ -1,0 +1,265 @@
+<!-- movie.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #1e1e2f;
+        color: #fff;
+        padding: 1px;
+      }
+
+      .movie-detail-container {
+        display: flex;
+        gap: 20px;
+        margin-left: 40px;
+      }
+
+      /* aa */
+      .movie-details-container {
+        padding: 40px 20px;
+        color: #fca311;
+        max-width: 1200px;
+        margin: 100px auto 60px;
+        background-color: #14213d;
+        border-radius: 10px;
+      }
+
+      .back-button {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #fca311;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .movie-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        background: #1a1a2e;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .movie-detail-poster {
+        width: 300px;
+        height: 450px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .movie-detail-info {
+        flex: 1;
+        color: rgb(250, 218, 218);
+      }
+
+      .poster {
+        width: 200px;
+        height: 350px;
+        border-radius: 10px;
+      }
+
+      .details {
+        max-width: 700px;
+        margin-left: 20px;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .meta {
+        margin: 10px 0;
+        color: #ccc;
+        margin-left: 25px;
+      }
+
+      .rating-box {
+        margin-top: 20px;
+        background: #1a1a2e;
+        padding: 10px;
+        border-radius: 8px;
+        margin-left: 20px;
+        width: 300px;
+        height: 130px;
+      }
+
+      .rating-box button {
+        border: none;
+        width: 70px;
+        height: 50px;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+
+      .rating-box p {
+        margin: 10px 0;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .rating {
+        font-size: 18px;
+      }
+
+      .video-section {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #1f1f3d;
+        border-radius: 10px;
+      }
+
+      .video-section h2 {
+        color: #fca311;
+        margin-bottom: 15px;
+      }
+
+      .movie-video {
+        width: 100%;
+        max-width: 100%;
+        height: 480px;
+        border-radius: 8px;
+      }
+    </style>
+    <!-- External Css -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="IMG/ShadowHeaven.png" type="image/x-icon" />
+    <title>ShadowHeaven</title>
+  </head>
+  <body>
+    <!-- Nav section -->
+    <!-- <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
+      &gt;
+    </button> -->
+    <div id="nav">
+      <div class="nav-top">
+        <div class="title-container">
+          <a href="about-us.html" class="title"
+            >Shadow<span style="color: white">Heaven</span></a
+          >
+        </div>
+
+        <div class="offcanvas" id="offcanvasMenu">
+          <div class="menu">
+            <ul>
+              <li>
+                <a href="index.html">Home</a>
+              </li>
+              <li><a href="movie.html">Movies</a></li>
+              <li><a href="offer.html">Offer</a></li>
+              <li><a href="about-us.html">About us</a></li>
+              <li>
+                <div class="search">
+                  <input
+                    type="text"
+                    class="search-input"
+                    placeholder="Search..."
+                  />
+                  <button class="clear-btn">&times;</button>
+                  <button class="search-button">Search</button>
+                </div>
+              </li>
+              <li><a href="login-form.html" class="log-in">Log in</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="movie-details-container">
+      <div class="movie-detail-wrapper">
+        <a href="index.html" class="back-link">← Back</a>
+
+        <div class="movie-detail-container">
+          <div class="movie-detail-left">
+            <img
+              id="moviePoster"
+              src=""
+              alt="Movie Poster"
+              class="movie-detail-poster"
+            />
+          </div>
+
+          <div class="movie-detail-right">
+            <h1 id="movieTitle">Movie Title</h1>
+            <p><strong>Year:</strong> <span id="movieYear"></span></p>
+            <p><strong>Duration:</strong> <span id="movieDuration"></span></p>
+            <p><strong>Genre:</strong> <span id="movieGenre"></span></p>
+            <p><strong>Rating:</strong> <span id="movieRating"></span></p>
+            <p id="movieDescription"></p>
+          </div>
+
+          <div class="reaction-box">
+            <p><strong>What do you think about this movie?</strong></p>
+            <button class="reaction-btn">😐 Boring</button>
+            <button class="reaction-btn">😊 Great</button>
+            <button class="reaction-btn">😍 Amazing</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="video-section">
+        <h2>Watch Trailer</h2>
+        <video controls class="movie-video">
+          <source src="" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Set poster image
+        document.getElementById("moviePoster").src =
+          urlParams.get("poster") || "";
+
+        // Set title and info
+        document.getElementById("movieTitle").textContent =
+          urlParams.get("title") || "Unknown Title";
+        document.getElementById("movieYear").textContent =
+          urlParams.get("year") || "N/A";
+        document.getElementById("movieDuration").textContent =
+          urlParams.get("duration") || "N/A";
+        document.getElementById("movieGenre").textContent =
+          urlParams.get("genre") || "N/A";
+        document.getElementById("movieRating").textContent =
+          urlParams.get("rating") || "N/A";
+
+        // Set description
+        document.getElementById("movieDescription").textContent =
+          decodeURIComponent(
+            urlParams.get("details") || "No description provided."
+          );
+
+        // Optional trailer support
+        const trailerSrc = urlParams.get("trailer");
+        if (trailerSrc) {
+          document.querySelector(".movie-video source").src = trailerSrc;
+          document.querySelector(".movie-video").load();
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-     <link
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
@@ -18,7 +18,6 @@
     <title>ShadowHeaven</title>
   </head>
   <body>
-    
     <nav>
       <a href="index.html">Home</a>
       <a href="movie.html">Movie</a>
@@ -27,15 +26,33 @@
     </nav>
 
     <div class="container">
-      <div class="info-container">
-        <h1>Welcome to</h1>
-        <a href="#" class="title">ShadowHeaven</a>
-        <p>where stories come alive.</p>
+      <div class="intro-container">
+      <section class="hero">
+        <div class="hero-left">
+          <h1><span style="color: #fca311">Shadow</span>Heaven</h1>
+
+          <div class="search-box">
+            <input type="text" placeholder="Search anime..." />
+            <button>🔍</button>
+          </div>
+
+          <div class="top-searches">
+            <strong>Top search:</strong><br />
+            Moana2, Mission: Impossible - Dead Reckoning Part Two, <br />
+            How To Make Millions Before Grandma Dies, Minecraft,<br />
+            Star Wars Untitled (2025), Sinners, Bridget Jones: Mad About the
+            Boy,<br />
+            Frozen, No Address, Bullet Train Explosion, The Italians...
+          </div>
+
+          <button class="watch-button">Watch Movies ➜</button>
+        </div>
+      </section>
       </div>
 
       <div class="about-us-container">
         <h1>About us</h1>
-            <img src="IMG/ShadowHeaven.png" alt="" />
+        <img src="IMG/ShadowHeaven.png" alt="" />
         <div class="info">
           <p>
             In a world overflowing with content, we aim to be a guiding light
@@ -52,24 +69,29 @@
             discover it.
           </p>
         </div>
-        <a href="index.html">
-        <button>Get Started</button></a>
+        <a href="index.html"> <button>Get Started</button></a>
       </div>
 
-      <div class="who-we-are-container">  
+      <div class="who-we-are-container">
         <h1>Who we are</h1>
-            <img src="IMG/ShadowHeaven.png" alt="" />
+        <img src="IMG/ShadowHeaven.png" alt="" />
         <div class="info">
           <p>
-            We are filmmakers, critics, weekend watchers, popcorn munchers, and lifelong fans of storytelling. At ShadowHeaven, we’re united by one thing: a deep love for cinema.
-
-What started as a small side project between a few movie-obsessed friends quickly evolved into a platform that now connects thousands of film lovers around the world. We’ve watched movies in packed theaters, on tiny laptop screens, and through late-night marathons with friends. And through it all, one thing remains true: films have a way of speaking to the soul.
-
-We’re not just a website. We’re a growing culture — a place where movies aren’t just reviewed or ranked, but truly felt.
+            We are filmmakers, critics, weekend watchers, popcorn munchers, and
+            lifelong fans of storytelling. At ShadowHeaven, we’re united by one
+            thing: a deep love for cinema. What started as a small side project
+            between a few movie-obsessed friends quickly evolved into a platform
+            that now connects thousands of film lovers around the world. We’ve
+            watched movies in packed theaters, on tiny laptop screens, and
+            through late-night marathons with friends. And through it all, one
+            thing remains true: films have a way of speaking to the soul. We’re
+            not just a website. We’re a growing culture — a place where movies
+            aren’t just reviewed or ranked, but truly felt.
           </p>
         </div>
+      </div>
     </div>
-    
+
     <footer id="footer">
       <div class="footer-links">
         <a href="#">Home</a>
@@ -101,21 +123,5 @@ We’re not just a website. We’re a growing culture — a place where movies a
         &copy; 2025 ShadowHeaven. All rights reserved.
       </div>
     </footer>
-
-    <!-- <script>
-      let stopScroll = document.querySelector("#footer");
-      window.addEventListener("scroll", (event) => {
-        console.log(window.scrollY);
-
-        if (window.scrollY > 100) {
-          stopScroll.style.position = "fixed";
-          stopScroll.style.bottom = "0px";
-          stopScroll.style.left = "0px";
-          stopScroll.style.width = "100%";
-        } else {
-          stopScroll.style.position = "absolute";
-        }
-      });
-    </script> -->
   </body>
 </html>
