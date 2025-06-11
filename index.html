@@ -21,42 +21,45 @@
   </head>
   <body>
     <!-- Nav section -->
-    <!-- <button class="offcanvas-toggle" id="menu" onclick="toggleOffcanvas()">
-      &gt;
-    </button> -->
-    <div id="nav">
-      <div class="nav-top">
-        <div class="title-container">
-          <a href="about-us.html" class="title"
-            >Shadow<span style="color: white">Heaven</span></a
-          >
-        </div>
-
-        <div class="offcanvas" id="offcanvasMenu">
-          <div class="menu">
-            <ul>
-              <li>
-                <a href="#">Home</a>
-              </li>
-              <li><a href="movie.html">Movies</a></li>
-              <li><a href="offer.html">Offer</a></li>
-              <li><a href="about-us.html">About us</a></li>
-              <li>
-                <div class="search">
-                  <input
-                    type="text"
-                    class="search-input"
-                    placeholder="Search..."
-                  />
-                  <button class="clear-btn">&times;</button>
-                  <button class="search-button">Search</button>
-                </div>
-              </li>
-              <li><a href="login-form.html" class="log-in">Log in</a></li>
-            </ul>
-          </div>
-        </div>
+    <div class="nav-top">
+      <div class="title-container">
+        <a href="about-us.html" class="title">
+          Shadow<span style="color: white">Heaven</span>
+        </a>
       </div>
+
+      <button class="offcanvas-toggle" onclick="toggleOffcanvas()">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <div class="navigation desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="#">Movies</a>
+        <a href="offer.html">Offer</a>
+        <a href="about-us.html">About us</a>
+        <div class="search">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <button class="clear-btn">&times;</button>
+          <button class="search-button">Search</button>
+        </div>
+        <a href="login-form.html" class="log-in">Log in</a>
+      </div>
+    </div>
+
+    <!--Offcanvas Menu -->
+    <div id="offcanvasMenu" class="offcanvas-menu">
+      <h1>Menu</h1>
+      <a href="index.html">Home</a>
+      <a href="#">Movies</a>
+      <a href="offer.html">Offer</a>
+      <a href="about-us.html">About us</a>
+      <div class="search">
+        <input type="text" class="search-input" placeholder="Search..." />
+        <button class="clear-btn">&times;</button>
+        <button class="search-button">Search</button>
+      </div>
+      <a href="login-form.html" class="log-in">Log in</a>
     </div>
 
     <!-- MM SECTION -->
@@ -255,5 +258,10 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+      function toggleOffcanvas() {
+        document.getElementById("offcanvasMenu").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>

@@ -10,64 +10,69 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <title>ShadowHeaven</title>
   </head>
   <body>
-    <nav id="nav">
-      <div class="nav-top">
-        <div class="title-container">
-          <a href="about-us.html" class="title"
-            >Shadow<span style="color: white">Heaven</span></a
-          >
-        </div>
-        <div class="navigation">
-          <a href="index.html">Home</a>
-          <a href="#">Movies</a>
-          <a href="offer.html">Offer</a>
-          <a href="about-us.html">About us</a>
-          <!-- <a href="#">Contact</a> -->
-          <div class="search">
-            <input type="text" class="search-input" placeholder="Search..." />
-            <button class="clear-btn">&times;</button>
-            <button class="search-button">Search</button>
-          </div>
-          <!-- </div>
-         <div class="log-in-container"> -->
-          <a href="login-form.html" class="log-in">Log in</a>
-        </div>
+    <div class="nav-top">
+      <div class="title-container">
+        <a href="about-us.html" class="title">
+          Shadow<span style="color: white">Heaven</span>
+        </a>
       </div>
-    </nav>
-    <!-- A to Z search section -->
-    <div class="filter-container" id="filterList">
+
+      <button class="offcanvas-toggle" onclick="toggleOffcanvas()">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <div class="navigation desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="#">Movies</a>
+        <a href="offer.html">Offer</a>
+        <a href="about-us.html">About us</a>
+        <div class="search">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <button class="clear-btn">&times;</button>
+          <button class="search-button">Search</button>
+        </div>
+        <a href="login-form.html" class="log-in">Log in</a>
+      </div>
     </div>
+
+    <!--Offcanvas Menu -->
+    <div id="offcanvasMenu" class="offcanvas-menu">
+      <h1>Menu</h1>
+      <a href="index.html">Home</a>
+      <a href="#">Movies</a>
+      <a href="offer.html">Offer</a>
+      <a href="about-us.html">About us</a>
+      <div class="search">
+        <input type="text" class="search-input" placeholder="Search..." />
+        <button class="clear-btn">&times;</button>
+        <button class="search-button">Search</button>
+      </div>
+      <a href="login-form.html" class="log-in">Log in</a>
+    </div>
+
+    <!-- A to Z search section -->
+    <div class="filter-container" id="filterList"></div>
 
     <div class="card-container" id="cardContainer">
-      <!-- <div class="tooltip-box">$149 - Available</div> -->
     </div>
 
-    <!-- External Js -->
-    <script>
-      function toggleOffcanvas() {
-        const menu = document.getElementById("menu");
-        const offcanvas = document.getElementById("offcanvasMenu");
-
-        document.getElementById("offcanvasMenu").classList.toggle("active");
-
-        if (offcanvas.classList.contains("active")) {
-          menu.innerText = "Close";
-        } else {
-          menu.innerText = "Menu";
-        }
-      }
-    </script>
     <script>
       let stopScroll = document.querySelector("#filterList");
       let stay = document.querySelector("#cardContainer");
       window.addEventListener("scroll", (event) => {
-        console.log(window.scrollY);
+        // console.log(window.scrollY);
 
         if (window.scrollY > 100) {
           stopScroll.style.position = "fixed";
@@ -115,21 +120,11 @@
       </div>
     </footer>
 
-    <!-- <script>
-      let stopScroll2 = document.querySelector("#footer");
-      window.addEventListener("scroll", (event) => {
-        console.log(window.scrollY);
-
-        if (window.scrollY > 100) {
-          stopScroll2.style.position = "fixed";
-          stopScroll2.style.bottom = "0px";
-          stopScroll2.style.left = "0px";
-          stopScroll2.style.width = "100%";
-        } else {
-          stopScroll2.style.position = "absolute";
-        }
-      });
-    </script> -->
     <script src="movie.js"></script>
+    <script>
+      function toggleOffcanvas() {
+        document.getElementById("offcanvasMenu").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>

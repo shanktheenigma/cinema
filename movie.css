@@ -151,8 +151,6 @@ nav {
 }
 /* A to Z filter section */
 .filter-container {
-  /* border: 2px solid white; */
-  /* margin-top: 10px; */
   padding: 10px 10px;
   justify-content: center;
   display: flex;
@@ -255,10 +253,6 @@ footer {
   margin-bottom: 10px;
 }
 
-.card-container p {
-  color: white;
-  font-family: "roboto";
-}
 .card {
   background-color: #222;
   border-radius: 8px;
@@ -286,24 +280,7 @@ footer {
 
 .card:hover {
   transform: scale(1.05);
-  /* z-index: -1; */
 }
-/* .card .tooltip-box {
-      position: absolute;
-      top: -60px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #000;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      white-space: nowrap;
-      font-size: 0.8rem;
-      display: none;
-    }
-    .card:hover .tooltip-box {
-      display: block;
-    } */
 
 .card p {
   font-family: "lato";
@@ -370,4 +347,231 @@ footer {
   margin-top: 10px;
   font-size: 0.7rem;
   color: #fff;
+}
+
+/* Offcanvas */
+.offcanvas-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fca311;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Hide offcanvas menu initially */
+.offcanvas-menu {
+  position: fixed;
+  top: 0px;
+  right: -100%;
+  width: 50%;
+  height: 100%;
+  background-color: #14213d;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  gap: 20px;
+  padding-left: 20px;
+  transition: right 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.offcanvas-menu.active {
+  right: 0;
+}
+
+.offcanvas-menu h1 {
+  font-family: "Lato";
+  font-size: 40px;
+  color: white;
+}
+
+.offcanvas-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  transition: color 0.3s;
+  border: 2px solid #e89d0e;
+  border-radius: 5px;
+  width: 310px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.6);
+  margin-top: 20px;
+}
+
+.offcanvas-menu a:hover {
+  background-color: #fca311;
+  color: #14213d;
+}
+
+.offcanvas-menu .search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  height: 40px;
+  max-width: 310px;
+  padding: 3px;
+  background-color: #fca311;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.offcanvas-menu .search-input {
+  height: 35px;
+  font-size: 14px;
+  border-radius: 5px 0 0 5px;
+  padding: 5px 30px 5px 10px;
+  border: 2px solid #14213d;
+  outline: none;
+  color: #14213d;
+  background-color: #f2e8cf;
+  box-sizing: border-box;
+}
+
+.offcanvas-menu .clear-btn {
+  position: absolute;
+  top: 50%;
+  right: 100px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #14213d;
+  padding: 0;
+  line-height: 1;
+}
+
+.offcanvas-menu .search-button {
+  padding: 10px 20px;
+  background-color: #14213d;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.offcanvas-menu .search-button:hover {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 768px) {
+  .filter-container {
+    padding: 7px 7px;
+    gap: 5px;
+  }
+
+  .filter-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+
+  .card-container {
+    gap: 10px;
+  }
+
+  .card {
+    width: 150px;
+    height: 350px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .card img {
+    height: 240px;
+  }
+
+  .card p {
+    font-size: 10px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .offcanvas-toggle {
+    display: block;
+  }
+
+  .offcanvas-menu a {
+    font-family: "roboto";
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 426px) {
+  
+.nav-top {
+  margin-left: 10px;
+}
+
+  .title {
+    font-size: 30px;
+    padding: 5px 0px;
+  }
+
+  .filter-container {
+    padding: 5px 5px;
+    gap: 4px;
+  }
+
+  .filter-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    font-size: 10px;
+  }
+
+  .card-container {
+    gap: 5px;
+    margin-bottom: 12px;
+  }
+
+  .card {
+    width: 100px;
+    height: 250px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  .card img {
+    height: 150px;
+  }
+
+  .card p {
+    font-size: 10px;
+  }
+
+.offcanvas-toggle {
+  font-size: 20px;
+}  
+
+  .offcanvas-menu {
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 30px;
+  }
+
+  .offcanvas-menu h1 {
+    font-size: 30px;
+  }
 }
